@@ -28,7 +28,6 @@ export const login = ({credential, password}) => async (dispatch) => {
   })
   if (response.ok) {
     const data = await response.json();
-    console.log("DATAAA", response)
     dispatch(setSession(data.user))
     return response;
   }
@@ -42,7 +41,7 @@ export default function sessionReducer(state = initialState, action) {
   let newState;
   switch (action.type) {
     case SET_SESSION:
-      newState = { user: action.payload}
+      newState = { user: action.user}
       return newState;
     case REMOVE_SESSION:
       return initialState;
