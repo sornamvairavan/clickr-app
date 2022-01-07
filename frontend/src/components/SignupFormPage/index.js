@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import '../../components/LoginFormPage/LoginForm.css'
+import '../LoginFormPage/LoginForm.css'
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -31,6 +31,7 @@ function SignupFormPage() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
+    <h1 className="form-title">Signup</h1>
       {errors.length > 0 && <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>}
