@@ -1,0 +1,36 @@
+.navlinks {
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-family: Helvetica,sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+.profile-dropdown {
+  font-family: Helvetica,sans-serif;
+}
+
+.profile-dropdown button {
+  background-color: #128fdc;
+  color: white;
+  font-size: 0.8rem;
+  border: 1px solid #128fdc;
+  border-radius: 0.25rem;
+  padding: 3px;
+  margin-top: 4px;
+}
+
+.user-button {
+  background-color: #128fdc;
+  color: white;
+  font-size: 15px;
+  border: 1px solid #128fdc;
+  border-radius: 0.25rem;
+  padding: 3px 8px;
+  margin-top: 4px;
+  cursor: pointer;
+}
