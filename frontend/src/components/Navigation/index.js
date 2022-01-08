@@ -23,7 +23,10 @@ function Navigation({ isLoaded }){
   return (
     <ul>
       <li>
-        <NavLink className="navlinks" exact to="/">Home</NavLink>
+        <NavLink className="navlinks" exact to="/">
+          {/* <img src="../images/Clickr-logo.png" alt="home" className="logo"/> */}
+          Home
+        </NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>
