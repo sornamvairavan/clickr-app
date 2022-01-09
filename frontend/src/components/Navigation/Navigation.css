@@ -49,7 +49,7 @@
   cursor: pointer;
 }
 
-.logo-img:hover, #login-button:hover, #demo-button:hover {
+.logo-img:hover, #login-button:hover, #demo-button:hover, .photo-tabs:hover {
   opacity: 70%;
 }
 
@@ -105,4 +105,21 @@
   color: white;
   background-color: rgba(77, 169, 190, 0.836);
   border: 1px solid rgba(77, 169, 190, 0.836);
+}
+
+.fa-cloud-upload-alt {
+  cursor: pointer;
+  color: white;
+  margin: 0 8px 0 20px;
+}
+
+.fa-cloud-upload-alt:hover {
+  opacity: 70%;
+}
+
+.photo-tabs {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
 }

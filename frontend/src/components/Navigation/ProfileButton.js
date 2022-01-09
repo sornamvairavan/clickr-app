@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { NavLink } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 
 function ProfileButton({ user }) {
@@ -31,6 +32,9 @@ function ProfileButton({ user }) {
   return (
     <>
       <div className="profile-button">
+        <NavLink className="photo-tabs" to="#">You</NavLink>
+        <NavLink className="photo-tabs" to="#">Explore</NavLink>
+        <i className="fas fa-cloud-upload-alt fa-lg" />
       <span style={{color:"white", margin: 10}}>Welcome {user.fullName}!</span>
         <button onClick={openMenu} className="user-button">
           <i className="fas fa-user" />
