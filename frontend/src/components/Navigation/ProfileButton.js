@@ -31,6 +31,7 @@ function ProfileButton({ user }) {
   return (
     <>
       <div className="profile-button">
+      <span style={{color:"white", margin: 10}}>Welcome {user.fullName}!</span>
         <button onClick={openMenu} className="user-button">
           <i className="fas fa-user" />
         </button>
