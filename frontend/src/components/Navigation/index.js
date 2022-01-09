@@ -9,7 +9,7 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
   const demoLogin = e => {
-    return dispatch(sessionActions.login({credential: "Demo-lition", password: "password"}))
+    return dispatch(sessionActions.login({credential: "demo@user.io", password: "password"}))
   }
 
   let sessionLinks;
