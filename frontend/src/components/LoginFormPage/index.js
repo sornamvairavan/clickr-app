@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './LoginForm.css'
 
 function LoginFormPage() {
@@ -27,7 +27,8 @@ function LoginFormPage() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <h1 className="form-title">Login</h1>
+      {/* <img src="../images/c.png" alt="logo" className="c-logo" /> */}
+      <h1 className="form-title">Log in to Clickr</h1>
       {errors.length > 0 && <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>}
@@ -53,6 +54,7 @@ function LoginFormPage() {
           required
         />
        <button type="submit" className="auth-button">Log In</button>
+       <p>Not a Clickr Member? <Link to="/signup">Sign up here.</Link></p>
       </div>
     </form>
   );

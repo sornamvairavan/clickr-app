@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import '../LoginFormPage/LoginForm.css'
 
@@ -31,7 +31,7 @@ function SignupFormPage() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-    <h1 className="form-title">Signup</h1>
+    <h1 className="form-title">Sign up for Flickr</h1>
       {errors.length > 0 && <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>}
@@ -77,6 +77,7 @@ function SignupFormPage() {
             required
           />
         <button type="submit" className="auth-button">Sign Up</button>
+        <p>Already a Clickr member? <Link to="/login">Log In here.</Link></p>
       </div>
     </form>
   );
