@@ -49,7 +49,7 @@
   cursor: pointer;
 }
 
-.logo-img:hover, #login-button:hover {
+.logo-img:hover, #login-button:hover, #demo-button:hover {
   opacity: 80%;
 }
 

@@ -31,13 +31,13 @@ module.exports = {
       {
         fullName: 'Rajesh Nair',
         email: 'rajeshnair@email.com',
-        username: 'rnair22',
+        username: 'rnair',
         hashedPassword: bcrypt.hashSync('password123!')
       },
       {
         fullName: 'Ruth Vega',
         email: 'ruthvega@email.com',
-        username: 'ruthvega254',
+        username: 'ruthvega24',
         hashedPassword: bcrypt.hashSync('password123!')
       },
 
