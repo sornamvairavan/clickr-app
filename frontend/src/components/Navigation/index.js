@@ -31,7 +31,7 @@ function Navigation({ isLoaded }){
   <div className="nav-bar">
     <span className="left-nav-bar">
       <NavLink id="logo" exact to="/">
-        <img src="./../../../public/images/clickr-logo.png" alt="home" className="logo-img"/>
+        <img src="/images/clickr-logo.png" alt="home" className="logo-img"/>
       </NavLink>
     </span>
     <span className="right-nav-bar">
