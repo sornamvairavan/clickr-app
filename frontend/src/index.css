@@ -2,8 +2,7 @@
 body {
   margin: 0;
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
-  /* background-image: url("../public/images/camera-photo-1.jpeg"); */
-  background-image: url("../public/images/clickr-logo.png");
+  background-image: url("../public/images/camera-photo-1.jpeg");
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;

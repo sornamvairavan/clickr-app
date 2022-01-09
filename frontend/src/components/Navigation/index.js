@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import * as sessionActions from '../../store/session';
-import './Navigation.css'
+import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ function Navigation({ isLoaded }){
   <div className="nav-bar">
     <span className="left-nav-bar">
       <NavLink id="logo" exact to="/">
-        <img src="/images/clickr-logo.png" alt="home" className="logo-img"/>
+        <img src="/images/clickr-logo.PNG" alt="home" className="logo-img"/>
       </NavLink>
     </span>
     <span className="right-nav-bar">
