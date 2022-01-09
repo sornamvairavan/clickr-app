@@ -5,7 +5,7 @@
   padding: 0 24px;
   margin: 0;
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.45);
   max-width: none !important;
   height: 64px;
 }
@@ -50,7 +50,7 @@
 }
 
 .logo-img:hover, #login-button:hover, #demo-button:hover {
-  opacity: 80%;
+  opacity: 70%;
 }
 
 #signup-button:hover {
