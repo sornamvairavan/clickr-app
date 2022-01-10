@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
   margin: 0;
   top: 0;
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
@@ -79,7 +78,7 @@
   background-color: rgba(77, 169, 190, 0.836);
 }
 
-.profile-button {
+.profile-right-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -112,10 +111,14 @@
   border: 1px solid rgba(77, 169, 190, 0.836);
 }
 
+.welcome-user {
+  color: white;
+  margin: 10px;
+}
 .fa-cloud-upload-alt {
   cursor: pointer;
   color: white;
-  margin: 0 8px 0 20px;
+  margin: 0 10px 0 10px;
 }
 
 .fa-cloud-upload-alt:hover {
@@ -126,5 +129,13 @@
   text-decoration: none;
   color: white;
   font-weight: bold;
-  padding: 10px;
+  margin: 10px;
+}
+
+.active.photo-tabs {
+  color: rgba(245, 245, 245, 0.726)
+  /* text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(255, 255, 255, 0.774); */
 }

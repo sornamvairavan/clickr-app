@@ -37,7 +37,7 @@ function SignupFormPage() {
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>}
       <div className="input-container">
-        <label htmlfor="fullName">Name</label>
+        <label htmlFor="fullName">Name</label>
         <input
           type="text"
           name="fullName"
