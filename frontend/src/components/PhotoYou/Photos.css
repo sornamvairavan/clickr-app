@@ -1,0 +1,15 @@
+.photos-container {
+  position: relative;
+  top: 85px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr);
+  gap: 10px;
+}
+
+.photos-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2px;
+}

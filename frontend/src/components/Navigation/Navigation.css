@@ -131,3 +131,11 @@
   font-weight: bold;
   margin: 10px;
 }
+
+.active.photo-tabs {
+  color: rgba(245, 245, 245, 0.726)
+  /* text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(255, 255, 255, 0.774); */
+}

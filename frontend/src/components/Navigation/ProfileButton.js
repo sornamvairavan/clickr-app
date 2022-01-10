@@ -32,8 +32,8 @@ function ProfileButton({ user }) {
   return (
     <>
       <div className="profile-right-nav">
-        <NavLink className="photo-tabs" to="#">You</NavLink>
-        <NavLink className="photo-tabs" to="#">Explore</NavLink>
+        <NavLink className="photo-tabs" exact to="/">You</NavLink>
+        <NavLink className="photo-tabs" to="/explore">Explore</NavLink>
         <i className="fas fa-cloud-upload-alt fa-lg" />
       <span className="welcome-user">Welcome {user.fullName}!</span>
         <button onClick={openMenu} className="user-button">
