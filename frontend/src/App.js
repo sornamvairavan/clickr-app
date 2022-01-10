@@ -6,6 +6,8 @@ import SignupFormPage from './components/SignupFormPage'
 import * as sessionActions from "./store/session"
 import Navigation from './components/Navigation'
 import PhotoYou from './components/PhotoYou'
+import PhotoExplore from './components/PhotoExplore'
+import PhotoAddForm from './components/PhotoAddForm'
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +25,12 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <PhotoYou />
+          </Route>
+          <Route path="/explore" exact>
+            <PhotoExplore />
+          </Route>
+          <Route path="/uploadPhoto" exact>
+            <PhotoAddForm />
           </Route>
           <Route path="/login">
             <LoginFormPage />

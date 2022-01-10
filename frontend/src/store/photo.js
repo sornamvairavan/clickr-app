@@ -14,12 +14,12 @@ const loadPhotos = (photos) => {
   }
 }
 
-// const addPhoto = (photo) => {
-//   return {
-//     type: ADD_PHOTO,
-//     photo
-//   }
-// }
+const addPhoto = (photo) => {
+  return {
+    type: ADD_PHOTO,
+    photo
+  }
+}
 
 // const updatePhoto = (photo) => {
 //   return {
@@ -44,6 +44,27 @@ export const getAllPhotos = () => async (dispatch) => {
   }
 }
 
+export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (dispatch) => {
+  const response = await fetch('api/photos', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      userId,
+      photoUrl,
+      caption,
+      isPublic
+    })
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(addPhoto(data.photo))
+    return response;
+  }
+}
+
 /* ------ REDUCER ------ */
 
 export default function photoReducer(state = {}, action) {
@@ -54,6 +75,11 @@ export default function photoReducer(state = {}, action) {
         allPhotos[photo.id] = photo
       })
       allPhotos = {...state, ...allPhotos}
+      return allPhotos;
+
+    case ADD_PHOTO:
+      allPhotos = {...state}
+      allPhotos[action.photo.id] = action.photo;
       return allPhotos;
     default:
       return state;

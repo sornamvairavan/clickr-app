@@ -4,11 +4,10 @@ import { getAllPhotos } from '../../store/photo'
 import SplashPage from '../SplashPage';
 import './Photos.css';
 
-export default function YouPage() {
+export default function PhotoYou() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const allPhotosObj = useSelector(state => state.photo)
-  console.log("OBJ!", allPhotosObj)
 
   const allPhotosArray = Object.values(allPhotosObj)
 
@@ -27,7 +26,10 @@ export default function YouPage() {
     return (
       <div className='photos-container'>
         {userPhotos.map(photo => (
-          <img src={photo.photoUrl} key={photo.id} alt={photo.caption}/>
+          <>
+            <img src={photo.photoUrl} key={photo.id} alt={photo.caption}/>
+            {/* <span>{photo.caption}</span> */}
+          </>
         ))}
       </div>
     )

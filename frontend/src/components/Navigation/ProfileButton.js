@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 
 function ProfileButton({ user }) {
@@ -29,12 +29,15 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
+
   return (
     <>
       <div className="profile-right-nav">
         <NavLink className="photo-tabs" exact to="/">You</NavLink>
         <NavLink className="photo-tabs" to="/explore">Explore</NavLink>
-        <i className="fas fa-cloud-upload-alt fa-lg" />
+        <Link to="/uploadPhoto" exact>
+          <i className="fas fa-cloud-upload-alt fa-lg" />
+        </Link>
       <span className="welcome-user">Welcome {user.fullName}!</span>
         <button onClick={openMenu} className="user-button">
           <i className="fas fa-user" />

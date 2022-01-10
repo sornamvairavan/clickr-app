@@ -1,0 +1,77 @@
+.add-photo-container {
+  position: fixed;
+  background-image: url("../../../public/images/background-6.jpeg");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  z-index: -1;
+}
+
+.add-photo-form {
+  background-color: white;
+  margin: 100px auto;
+  width: 22rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  font-family: Helvetica,sans-serif;
+  font-size: 0.8rem;
+}
+
+.add-form-title {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #212124;
+}
+
+.add-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  width: 94%;
+  margin: 0px;
+}
+
+.add-input-container > input {
+  margin: 3px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+}
+
+.add-input-container > label {
+  display: flex;
+  margin: 3px 10px;
+  height: 20px;
+  align-items: flex-end;
+}
+
+.add-photo-button {
+  background-color: rgb(28, 162, 192);
+  color: white;
+  font-size: 0.8rem;
+  width: 40%;
+  border: 1px solid rgb(28, 162, 192);
+  border-radius: 0.25rem;
+  padding: 4px;
+  margin: 10px 0 10px 0;
+  align-self: center;
+  cursor: pointer;
+}
+
+.add-photo-radio {
+  margin: 0px 10px;
+}
+
+.add-photo-radio > label {
+  margin-right: 12px;
+}
+
+.add-photo-button:hover {
+  background-color:rgb(77, 169, 190);
+}
