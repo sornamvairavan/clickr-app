@@ -1,6 +1,17 @@
+.auth-form-container {
+  position: fixed;
+  background-image: url("../../../public/images/mountain-2.jpeg");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  z-index: -1;
+}
+
 .auth-form {
   background-color: white;
-  margin: 50px auto;
+  margin: 100px auto;
   width: 22rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1.5rem;

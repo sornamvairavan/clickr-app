@@ -1,6 +1,33 @@
-/* .splash-container {
-  background-image: url("http://pavbca.com/walldb/original/9/a/d/657863.jpg");
-  height: 100vh;
+.splash-container {
+  position: fixed;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-image: url("../../../public/images/camera-photo-1.jpeg");
+  height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-} */
+  z-index: -1;
+}
+
+.header1 {
+  padding: 0;
+  margin: 0px 0 5px 0;
+  color: white;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 450;
+  text-align: center;
+}
+
+.one-liner {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 300;
+  margin: 15px 0 200px 0;
+  text-align: center;
+}

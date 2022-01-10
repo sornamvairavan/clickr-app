@@ -30,6 +30,7 @@ function SignupFormPage() {
   };
 
   return (
+    <div className='auth-form-container'>
     <form onSubmit={handleSubmit} className="auth-form">
     <h1 className="form-title">Sign up for Flickr</h1>
       {errors.length > 0 && <ul>
@@ -80,6 +81,7 @@ function SignupFormPage() {
         <p>Already a Clickr member? <Link to="/login">Log In here.</Link></p>
       </div>
     </form>
+  </div>
   );
 }
 

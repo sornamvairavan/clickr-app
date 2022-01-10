@@ -1,9 +1,12 @@
 .nav-bar {
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
   margin: 0;
+  top: 0;
   font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
   background: rgba(0, 0, 0, 0.45);
   max-width: none !important;

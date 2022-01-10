@@ -26,6 +26,7 @@ function LoginFormPage() {
   }
 
   return (
+  <div className='auth-form-container'>
     <form onSubmit={handleSubmit} className="auth-form">
       {/* <img src="../images/c.png" alt="logo" className="c-logo" /> */}
       <h1 className="form-title">Log in to Clickr</h1>
@@ -57,6 +58,7 @@ function LoginFormPage() {
        <p>Not a Clickr Member? <Link to="/signup">Sign up here.</Link></p>
       </div>
     </form>
+  </div>
   );
 }
 
