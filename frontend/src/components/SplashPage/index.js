@@ -7,7 +7,7 @@ export default function SplashComponent() {
         <h2 className="header1">Find your inspiration.</h2>
         <h5 className="one-liner">A click is a forever thing</h5>
       </div>
-      {/* <footer className='network-links'></footer> */}
+      {/* <footer className='network-links'>LinkedIn Github</footer> */}
     </div>
   )
 }

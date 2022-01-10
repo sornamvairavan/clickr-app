@@ -4,7 +4,7 @@
   justify-items: center;
   align-items: center;
   background-image: url("../../../public/images/camera-photo-1.jpeg");
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,5 +29,15 @@
   line-height: 25px;
   font-weight: 300;
   margin: 15px 0 200px 0;
+  text-align: center;
+}
+
+.network-links {
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  height: 40px;
+  width: 100%;
   text-align: center;
 }

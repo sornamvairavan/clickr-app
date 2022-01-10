@@ -31,11 +31,11 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <div className="profile-button">
+      <div className="profile-right-nav">
         <NavLink className="photo-tabs" to="#">You</NavLink>
         <NavLink className="photo-tabs" to="#">Explore</NavLink>
         <i className="fas fa-cloud-upload-alt fa-lg" />
-      <span style={{color:"white", margin: 10}}>Welcome {user.fullName}!</span>
+      <span class="welcome-user">Welcome {user.fullName}!</span>
         <button onClick={openMenu} className="user-button">
           <i className="fas fa-user" />
         </button>
