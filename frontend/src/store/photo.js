@@ -40,16 +40,13 @@ export const getAllPhotos = () => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(loadPhotos(data.photos))
-    return response;
+    return data.photos;
   }
 }
 
 export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (dispatch) => {
   const response = await csrfFetch('api/photos', {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
     body: JSON.stringify({
       userId,
       photoUrl,
@@ -61,7 +58,7 @@ export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (d
   if (response.ok) {
     const data = await response.json();
     dispatch(addPhoto(data.photo))
-    return response;
+    return data.photo;
   }
 }
 

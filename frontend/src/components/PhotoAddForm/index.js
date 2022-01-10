@@ -8,7 +8,6 @@ export default function PhotoAddForm() {
   const [photoUrl, setPhotoUrl] = useState('')
   const [caption, setCaption] = useState('')
   const [isPublic, setIsPublic] = useState(true)
-  const [errors, setErrors] = useState([])
 
   const dispatch = useDispatch();
   const history = useHistory()
@@ -30,22 +29,13 @@ export default function PhotoAddForm() {
       history.push("/")
       reset()
     }
-    
-    return newPhoto
-      .catch(async (res) => {
-        const data = await res.json()
-        if (data && data.errors) setErrors(data.errors)
-      })
-
   }
 
   const reset = () => {
     setPhotoUrl('');
     setCaption('')
     setIsPublic(true)
-    setErrors([])
   }
-
 
   if (!sessionUser) {
     return (
@@ -57,9 +47,6 @@ export default function PhotoAddForm() {
     <div className="add-photo-container">
       <form className='add-photo-form' onSubmit={uploadHandleSubmit}>
         <h1 className="add-form-title">Upload Photo</h1>
-        {errors.length > 0 && <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>}
         <div className="add-input-container">
           <label htmlFor="photoUrl">Photo URL</label>
           <input
