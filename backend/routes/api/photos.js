@@ -36,15 +36,15 @@ router.get("/id(\\d+)", asyncHandler(async (req, res) => {
 }))
 
 router.post("/", handleValidationErrors, photoValidations, asyncHandler(async(req, res) => {
-  const { user } = req;
   const {
+    userId,
     photoUrl,
     caption,
     isPublic
   } = req.body
 
   const newPhoto = await Photo.create({
-    userId: user.id,
+    userId,
     photoUrl,
     caption,
     isPublic

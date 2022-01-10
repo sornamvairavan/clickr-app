@@ -45,7 +45,7 @@ export const getAllPhotos = () => async (dispatch) => {
 }
 
 export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (dispatch) => {
-  const response = await fetch('api/photos', {
+  const response = await csrfFetch('api/photos', {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

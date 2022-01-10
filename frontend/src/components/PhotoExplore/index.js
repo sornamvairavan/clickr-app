@@ -17,21 +17,20 @@ export default function YouPage() {
     dispatch(getAllPhotos())
   }, [])
 
-  if (sessionUser) {
-    return (
-      <div className='photos-container'>
-        {publicPhotos.map(photo => (
-          <>
-            <img src={photo.photoUrl} key={photo.id} alt={photo.caption}/>
-            {/* <span>{photo.caption}</span> */}
-          </>
-        ))}
-      </div>
-    )
-  }
-  else {
+  if (!sessionUser) {
     return (
       <Redirect to="/" />
     )
   }
+
+  return (
+    <div className='photos-container'>
+      {publicPhotos.map(photo => (
+        <>
+          <img src={photo.photoUrl} key={photo.id} alt={photo.caption}/>
+          {/* <span>{photo.caption}</span> */}
+        </>
+      ))}
+    </div>
+  )
 }
