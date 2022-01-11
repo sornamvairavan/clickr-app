@@ -37,13 +37,10 @@ export default function PhotoYou() {
       <>
         <div className='photos-container'>
           {userPhotos.map(photo => (
-            <div className="image-tile" key={photo.id}>
-              <h4 className="overlay-header">{photo.User.username}</h4>
-              <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id}
-                className="displayedPhotos"
-                onClick={openPhotoDetails}
-                />
-            </div>
+            <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id}
+              className="displayedPhotos"
+              onClick={openPhotoDetails}
+              />
           ))}
         </div>
         {showModal && (
