@@ -51,7 +51,7 @@ export default function PhotoAddForm() {
             type="text"
             name="photoUrl"
             placeholder='Photo URL'
-            autocomplete="off"
+            autoComplete="off"
             // required
             value={photoUrl}
             onChange={(e) => setPhotoUrl(e.target.value)}
@@ -60,6 +60,7 @@ export default function PhotoAddForm() {
           <input 
             type="text"
             name="caption"
+            autoComplete="off"
             placeholder='Optional caption'
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
@@ -73,7 +74,6 @@ export default function PhotoAddForm() {
                 name="isPublic"
                 checked={isPublic === true}
                 onChange={(e) => setIsPublic(true)}
-                className
               />Yes
               </label>
               <label htmlFor="no">

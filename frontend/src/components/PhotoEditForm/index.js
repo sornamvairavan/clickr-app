@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, Redirect, useParams } from 'react-router-dom'
-import * as photoActions from '../../store/photo'
+import { updatePhotoById } from '../../store/photo'
 
 export default function PhotoEditForm() {
   const {photoId} = useParams();
@@ -24,17 +24,11 @@ export default function PhotoEditForm() {
       isPublic
     }
     
-    const updatedPhoto = await dispatch(photoActions.updatePhotoById(payload));
+    const updatedPhoto = await dispatch(updatePhotoById(payload));
+
     if (updatedPhoto) {
       history.push("/")
-      reset()
     }
-  }
-
-  const reset = () => {
-    setPhotoUrl('');
-    setCaption('')
-    setIsPublic(true)
   }
 
   if (!sessionUser) {
@@ -53,6 +47,7 @@ export default function PhotoEditForm() {
           <input 
             type="text"
             name="caption"
+            autoComplete="off"
             placeholder='Optional caption'
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
@@ -66,7 +61,6 @@ export default function PhotoEditForm() {
                 name="isPublic"
                 checked={isPublic === true}
                 onChange={(e) => setIsPublic(true)}
-                className
               />Yes
               </label>
               <label htmlFor="no">
