@@ -1,23 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, Redirect, useParams } from 'react-router-dom'
-import { updatePhotoById } from '../../store/photo'
+import { updatePhotoById, getAllPhotos } from '../../store/photo'
 
 export default function PhotoEditForm() {
   const {photoId} = useParams();
-
   const dispatch = useDispatch();
+  
   const history = useHistory()
   const sessionUser = useSelector(state => state.session.user)
   const photo = useSelector(state => state.photo[photoId])
 
-  const [photoUrl, setPhotoUrl] = useState(photo.photoUrl)
-  const [caption, setCaption] = useState(photo.caption)
-  const [isPublic, setIsPublic] = useState(photo.isPublic)
+  useEffect(() => {
+    dispatch(getAllPhotos())
+  }, [dispatch])
 
+
+  const [photoUrl, setPhotoUrl] = useState(photo?.photoUrl)
+  const [caption, setCaption] = useState(photo?.caption)
+  const [isPublic, setIsPublic] = useState(photo?.isPublic)
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     const payload = {
       photoId,
       caption,
@@ -34,6 +39,12 @@ export default function PhotoEditForm() {
   if (!sessionUser) {
     return (
       <Redirect to="/" />
+    )
+  }
+
+  if (!photo) {
+    return (
+      <p>Nothing to show here</p>
     )
   }
 
