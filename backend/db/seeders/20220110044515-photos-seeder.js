@@ -16,6 +16,12 @@ module.exports = {
         isPublic: true
       },
       {
+        userId: 3,
+        photoUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        caption: "Work flow",
+        isPublic: true
+      },
+      {
         userId: 5,
         photoUrl: "https://images.unsplash.com/photo-1538605971-a32a89ee6bde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         caption: "The wonder of The Hooker Glacier and glacial lake and the fret of Mt Cook, NZ. In winter the lake is iced over and some adventurous souls walk out onto it, not me though I’d rather view from afar.",
@@ -25,12 +31,6 @@ module.exports = {
         userId: 3,
         photoUrl: "https://images.unsplash.com/photo-1533101062-8970cf1aabf2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         caption: "The beautiful views of the Hooker Valley Track are so special. Winter is the best time of year to go for snow capped peaks and an adventurous walk to the glacier.",
-        isPublic: true
-      },
-      {
-        userId: 3,
-        photoUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-        caption: "Work flow",
         isPublic: true
       },
       {

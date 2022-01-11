@@ -38,6 +38,7 @@ export default function PhotoYou() {
         <div className='photos-container'>
           {userPhotos.map(photo => (
             <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id}
+              className="displayedPhotos"
               onClick={openPhotoDetails}
               />
           ))}

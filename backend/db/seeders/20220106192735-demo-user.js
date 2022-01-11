@@ -40,7 +40,6 @@ module.exports = {
         username: 'ruthvega24',
         hashedPassword: bcrypt.hashSync('password123!')
       },
-
     ], {});
   },
 
