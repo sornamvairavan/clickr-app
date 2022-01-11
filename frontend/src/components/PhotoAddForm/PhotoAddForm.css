@@ -1,6 +1,6 @@
-.auth-form-container {
+.add-photo-container {
   position: fixed;
-  background-image: url("../../../public/images/mountain-2.jpeg");
+  background-image: url("../../../public/images/background-6.jpeg");
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
@@ -9,7 +9,7 @@
   z-index: -1;
 }
 
-.auth-form {
+.add-photo-form {
   background-color: white;
   margin: 100px auto;
   width: 22rem;
@@ -20,7 +20,7 @@
   font-size: 0.8rem;
 }
 
-.form-title {
+.add-form-title {
   text-align: center;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -28,11 +28,7 @@
   color: #212124;
 }
 
-.c-logo {
-  width: 50px;
-}
-
-.input-container {
+.add-input-container {
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
@@ -40,7 +36,7 @@
   margin: 0px;
 }
 
-.input-container input {
+.add-input-container > input {
   margin: 3px 10px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
@@ -48,53 +44,38 @@
   width: 100%;
 }
 
-.input-container label {
+.add-input-container > label {
   display: flex;
   margin: 3px 10px;
   height: 20px;
   align-items: flex-end;
 }
 
-.auth-button {
-  background-color: #128fdc;
+.add-photo-button {
+  background-color: rgb(28, 162, 192);
   color: white;
   font-size: 0.8rem;
   width: 40%;
-  border: 1px solid #128fdc;
+  border: 1px solid rgb(28, 162, 192);
   border-radius: 0.25rem;
   padding: 4px;
   margin: 10px 0 10px 0;
   align-self: center;
-}
-
-.auth-button:hover {
-  background-color: #149ff5;
   cursor: pointer;
 }
 
-.input-container p {
-  text-align: center;
-  margin: 5px 0;
+.add-photo-radio {
+  margin: 0px 10px;
 }
 
-.input-container p > a {
-  text-decoration: none;
-  color: #128fdc;
+.add-photo-radio > label {
+  margin-right: 12px;
 }
 
-.errors {
-  margin: 5px auto;
-  width: 90%;
-  list-style: none;
-  padding: 5px;
-  background-color: #f8d7da;
-  text-align: center;
-  border-radius: 7px;
+.add-photo-button:hover {
+  background-color:rgb(77, 169, 190);
 }
 
-.errors li {
-  list-style-type: none;
-  padding: 5px;
-  font-size: 14px;
-  color: #cc5e67;
+.photoUrl {
+  margin: 3px 10px 6px 10px;
 }

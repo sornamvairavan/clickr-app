@@ -30,7 +30,7 @@ function LoginFormPage() {
     <form onSubmit={handleSubmit} className="auth-form">
       {/* <img src="../images/c.png" alt="logo" className="c-logo" /> */}
       <h1 className="form-title">Log in to Clickr</h1>
-      {errors.length > 0 && <ul>
+      {errors.length > 0 && <ul className="errors">
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>}
       <div className="input-container">

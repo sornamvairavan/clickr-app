@@ -1,6 +1,6 @@
 import './SplashPage.css'
 
-export default function SplashComponent() {
+export default function SplashPage() {
   return (
     <div className="splash-container">
       <div className="splash-text-container">

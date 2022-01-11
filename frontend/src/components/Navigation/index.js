@@ -22,7 +22,7 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <Link id="demo-button" onClick={demoLogin}>Demo</Link>
+        <Link id="demo-button" onClick={demoLogin} to="#">Demo</Link>
         <NavLink id="login-button" to="/login">Log In</NavLink>
         <NavLink id="signup-button" to="/signup">Sign Up</NavLink>
       </>
@@ -32,7 +32,7 @@ function Navigation({ isLoaded }){
   return (
   <div className="nav-bar">
     <span className="left-nav-bar">
-      <NavLink id="logo" exact to="/">
+      <NavLink id="logo" to="/" exact>
         <img src="/images/clickr-logo.png" alt="home" className="logo-img"/>
       </NavLink>
     </span>

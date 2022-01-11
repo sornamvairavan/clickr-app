@@ -1,0 +1,65 @@
+
+#photo-details-container {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  max-height: 600px;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#photo-details {
+  background-color: white;
+  min-width: 300px;
+}
+
+.photo-caption {
+  font-size: 20px;
+  margin: 15px 10px 10px 15px;
+  font-weight: 400;
+}
+
+#photo-details p {
+  font-size: 12px;
+  margin: 0 0 0 15px;
+}
+
+#photo-details p > span{
+  font-size: 15px;
+  margin: 0 0 0 3px;
+  font-weight: 600;
+  color: rgba(29, 64, 71, 0.836)
+}
+
+.photo-edit-button {
+  background-color: rgb(28, 162, 192);
+  color: white;
+  font-size: 0.8rem;
+  border: 1px solid rgb(28, 162, 192);
+  border-radius: 0.25rem;
+  margin: 7px 5px 0 15px;
+  align-self: center;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1px 6px;
+}
+
+.photo-delete-button {
+  background-color: rgb(190, 44, 44);
+  color: white;
+  font-size: 0.8rem;
+  border: 1px solid rgb(190, 44, 44);
+  border-radius: 0.25rem;
+  margin: 7px 0px 0 0px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.photo-delete-button:hover, .photo-edit-button:hover {
+  opacity: 80%;
+}

@@ -36,15 +36,15 @@ router.get("/id(\\d+)", asyncHandler(async (req, res) => {
 }))
 
 router.post("/", handleValidationErrors, photoValidations, asyncHandler(async(req, res) => {
-  const { user } = req;
   const {
+    userId,
     photoUrl,
     caption,
     isPublic
   } = req.body
 
   const newPhoto = await Photo.create({
-    userId: user.id,
+    userId,
     photoUrl,
     caption,
     isPublic
@@ -56,30 +56,30 @@ router.post("/", handleValidationErrors, photoValidations, asyncHandler(async(re
 router.put("/:id(\\d+)", asyncHandler(async(req, res) => {
   const photoId = req.params.id
   const {
-    photoUrl,
     caption,
     isPublic
   } = req.body
 
-  const photo  = await photo.findByPk(photoId)
+  const photo = await Photo.findByPk(photoId)
 
   if (photo) {
     let updatedPhoto = await photo.update({
-      photoUrl,
+      photoId,
       caption,
       isPublic
     })
+    return res.json(updatedPhoto)
   }
-  return res.json(updatedPhoto)
 }))
 
 router.delete("/:id(\\d+)", asyncHandler(async(req, res) => {
-  const photoId = req.params.id
-  const photo = await photo.findByPk(photoId)
+  const photoId = req.body.photoId
+  const photoToDelete = await Photo.findByPk(photoId)
 
-  if(photo) {
-    await photo.destroy()
+  if(photoToDelete) {
+    await photoToDelete.destroy()
   }
+  return res.json(photoToDelete)
 }))
 
 module.exports = router;
