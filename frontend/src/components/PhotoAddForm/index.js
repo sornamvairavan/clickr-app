@@ -52,7 +52,7 @@ export default function PhotoAddForm() {
             name="photoUrl"
             placeholder='Photo URL'
             autoComplete="off"
-            // required
+            required
             value={photoUrl}
             onChange={(e) => setPhotoUrl(e.target.value)}
           />

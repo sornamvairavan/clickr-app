@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import * as photoActions from '../../store/photo'
+import { deletePhotoById } from '../../store/photo'
 import './PhotoDetails.css'
 
 export default function PhotoDetails(photoId) {
@@ -10,7 +10,7 @@ export default function PhotoDetails(photoId) {
   const userId = useSelector(state => state.session.user.id);
 
   const deletePhotoButton = () => {
-    const deletedPhoto = dispatch(photoActions.deletePhotoById(photo.id))
+    const deletedPhoto = dispatch(deletePhotoById(photo.id))
    if (deletedPhoto) {
      window.location.reload()
    }
