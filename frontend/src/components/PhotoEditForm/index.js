@@ -19,6 +19,10 @@ export default function PhotoEditForm() {
   const [caption, setCaption] = useState(photo?.caption)
   const [isPublic, setIsPublic] = useState(photo?.isPublic)
 
+  setTimeout(()=> setPhotoUrl(photo?.photoUrl), 20)
+  setTimeout(()=> setCaption(photo?.caption), 20)
+  setTimeout(()=> setIsPublic(photo?.isPublic), 20)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -38,12 +42,6 @@ export default function PhotoEditForm() {
   if (!sessionUser) {
     return (
       <Redirect to="/" />
-    )
-  }
-
-  if (!photo) {
-    return (
-      <p>Nothing to show here</p>
     )
   }
 
