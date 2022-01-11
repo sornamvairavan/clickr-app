@@ -15,11 +15,10 @@ export default function PhotoEditForm() {
     dispatch(getAllPhotos())
   }, [dispatch])
 
-
   const [photoUrl, setPhotoUrl] = useState(photo?.photoUrl)
   const [caption, setCaption] = useState(photo?.caption)
   const [isPublic, setIsPublic] = useState(photo?.isPublic)
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
