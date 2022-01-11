@@ -75,3 +75,7 @@
 .add-photo-button:hover {
   background-color:rgb(77, 169, 190);
 }
+
+.photoUrl {
+  margin: 3px 10px 6px 10px;
+}

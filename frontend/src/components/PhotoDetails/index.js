@@ -1,12 +1,20 @@
-
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
+import * as photoActions from '../../store/photo'
 import './PhotoDetails.css'
 
 export default function PhotoDetails(photoId) {
+  const dispatch = useDispatch();
   let photosId = photoId.photoId
   const photo = useSelector(state => state.photo[photosId])
   const userId = useSelector(state => state.session.user.id);
+
+  const deletePhotoButton = () => {
+    const deletedPhoto = dispatch(photoActions.deletePhotoById(photo.id))
+   if (deletedPhoto) {
+     window.location.reload()
+   }
+  }
 
   return (
     <div>
@@ -16,8 +24,13 @@ export default function PhotoDetails(photoId) {
           <div id="photo-details">
             <h2 className="photo-caption">{photo?.caption}</h2>
             <p>by: <span>{photo?.User.username}</span></p>
-            {userId === photo?.userId && <button className="photo-edit-button">Edit</button>}
-            {userId === photo?.userId && <button className="photo-delete-button">Delete</button>}
+            {userId === photo?.userId && 
+              <Link to={`/${photo?.id}/edit`} className="photo-edit-button">
+                Edit</Link>}
+            {userId === photo?.userId && 
+              <button onClick={deletePhotoButton} 
+               className="photo-delete-button">
+                Delete</button>}
           </div>
         </div>
       </div>

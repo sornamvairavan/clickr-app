@@ -33,9 +33,9 @@ function ProfileButton({ user }) {
   return (
     <>
       <div className="profile-right-nav">
-        <NavLink className="photo-tabs" exact to="/">You</NavLink>
+        <NavLink className="photo-tabs" to="/" exact>You</NavLink>
         <NavLink className="photo-tabs" to="/explore">Explore</NavLink>
-        <Link to="/uploadPhoto" exact>
+        <Link to="/uploadPhoto">
           <i className="fas fa-cloud-upload-alt fa-lg" />
         </Link>
       <span className="welcome-user">Welcome {user.fullName}!</span>

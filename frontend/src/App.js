@@ -8,6 +8,7 @@ import Navigation from './components/Navigation'
 import PhotoYou from './components/PhotoYou'
 import PhotoExplore from './components/PhotoExplore'
 import PhotoAddForm from './components/PhotoAddForm'
+import PhotoEditForm from "./components/PhotoEditForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,11 +27,14 @@ function App() {
           <Route path="/" exact>
             <PhotoYou />
           </Route>
-          <Route path="/explore" exact>
+          <Route path="/explore">
             <PhotoExplore />
           </Route>
-          <Route path="/uploadPhoto" exact>
+          <Route path="/uploadPhoto">
             <PhotoAddForm />
+          </Route>
+          <Route path="/:photoId/edit">
+            <PhotoEditForm />
           </Route>
           <Route path="/login">
             <LoginFormPage />

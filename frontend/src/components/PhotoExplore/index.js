@@ -36,10 +36,8 @@ export default function YouPage() {
     <>
       <div className='photos-container'>
         {publicPhotos.map(photo => (
-          <>
             <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id} 
             onClick={openPhotoDetails}/>
-          </>
         ))}
       </div>
       {showModal && (
