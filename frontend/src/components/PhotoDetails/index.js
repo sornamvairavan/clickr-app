@@ -1,18 +1,12 @@
-import { useParams } from "react-router-dom";
+
 import { useDispatch, useSelector } from 'react-redux'
 // import { getPhotoById } from "../../store/photo";
 // import { useEffect } from "react";
 
-export default function PhotoDetails() {
-  const dispatch = useDispatch();
-
-  const { photoId } = useParams();
-  const photo = useSelector(state => state.photo[photoId])
+export default function PhotoDetails(photoId) {
+  let photosId = photoId.photoId
+  const photo = useSelector(state => state.photo[photosId])
   const userId = useSelector(state => state.session.user.id);
-
-  // useEffect(() => {
-  //   dispatch(getPhotoById(photoId))
-  // }, [])
 
   return (
     <div>
