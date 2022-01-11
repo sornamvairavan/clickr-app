@@ -81,3 +81,20 @@
   text-decoration: none;
   color: #128fdc;
 }
+
+.errors {
+  margin: 5px auto;
+  width: 90%;
+  list-style: none;
+  padding: 5px;
+  background-color: #f8d7da;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.errors li {
+  list-style-type: none;
+  padding: 5px;
+  font-size: 14px;
+  color: #cc5e67;
+}
