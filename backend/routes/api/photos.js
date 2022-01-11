@@ -9,7 +9,10 @@ const router = express.Router();
 photoValidations = [
   check("photoUrl")
     .exists({ checkFalsy: true })
-    .withMessage("Please provide the photo url for your photo")
+    .withMessage("Please provide the photo URL for your photo")
+    .isURL()
+    .withMessage("Please provide a valid URL"),
+  handleValidationErrors
 ]
 
 router.get("/", asyncHandler(async (req, res) => {
@@ -35,7 +38,7 @@ router.get("/id(\\d+)", asyncHandler(async (req, res) => {
   })
 }))
 
-router.post("/", handleValidationErrors, photoValidations, asyncHandler(async(req, res) => {
+router.post("/", photoValidations, asyncHandler(async(req, res) => {
   const {
     userId,
     photoUrl,
