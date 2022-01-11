@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+import PhotoDetailsModal from '../PhotoDetailsModal';
 import { getAllPhotos } from '../../store/photo'
 import SplashPage from '../SplashPage';
 import './Photos.css';
@@ -26,10 +28,10 @@ export default function PhotoYou() {
     return (
       <div className='photos-container'>
         {userPhotos.map(photo => (
-          <>
+          <Link to={`/photos/${photo.id}`} key={photo.id}>
+            <PhotoDetailsModal />
             <img src={photo.photoUrl} key={photo.id} alt={photo.caption}/>
-            {/* <span>{photo.caption}</span> */}
-          </>
+          </Link>
         ))}
       </div>
     )

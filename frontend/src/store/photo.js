@@ -21,12 +21,12 @@ const addPhoto = (photo) => {
   }
 }
 
-// const updatePhoto = (photo) => {
-//   return {
-//     type: UPDATE_PHOTO,
-//     photo
-//   }
-// }
+const updatePhoto = (photo) => {
+  return {
+    type: UPDATE_PHOTO,
+    photo
+  }
+}
 
 // const deletePhoto = (photoId) => {
 //   type: DELETE_PHOTO,
@@ -44,6 +44,15 @@ export const getAllPhotos = () => async (dispatch) => {
   }
 }
 
+export const getPhotoById = ({ photoId }) => async (dispatch) => {
+  const response = await csrfFetch(`/api/photos/${photoId}`)
+
+  if (response.ok) {
+    const photo = await response.json();
+    return photo;
+  }
+}
+
 export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (dispatch) => {
   const response = await csrfFetch('api/photos', {
     method: "POST",
@@ -56,9 +65,26 @@ export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (d
   });
 
   if (response.ok) {
-    const data = await response.json();
-    dispatch(addPhoto(data.photo))
-    return data.photo;
+    const photo = await response.json();
+    dispatch(addPhoto(photo))
+    return photo;
+  }
+}
+
+export const updatePhotoById = ({ photoId, caption, isPublic }) => async (dispatch) => {
+  const response = await csrfFetch(`api/photos/${photoId}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      photoId,
+      caption,
+      isPublic
+    })
+  })
+
+  if (response.ok) {
+    const updatedPhoto = await response.json();
+    dispatch(updatePhoto(updatedPhoto));
+    return updatedPhoto
   }
 }
 
@@ -78,6 +104,12 @@ export default function photoReducer(state = {}, action) {
       allPhotos = {...state}
       allPhotos[action.photo.id] = action.photo;
       return allPhotos;
+
+    case UPDATE_PHOTO:
+      allPhotos = {...state}
+      allPhotos[action.updatePhoto.id] = action.updatePhoto;
+      return allPhotos;
+
     default:
       return state;
   }
