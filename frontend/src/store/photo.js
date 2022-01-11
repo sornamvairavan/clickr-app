@@ -44,15 +44,6 @@ export const getAllPhotos = () => async (dispatch) => {
   }
 }
 
-export const getPhotoById = ({ photoId }) => async (dispatch) => {
-  const response = await csrfFetch(`/api/photos/${photoId}`)
-
-  if (response.ok) {
-    const photo = await response.json();
-    return photo;
-  }
-}
-
 export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (dispatch) => {
   const response = await csrfFetch('api/photos', {
     method: "POST",

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal';
 import PhotoDetails from '../PhotoDetails'
 import { getAllPhotos } from '../../store/photo'
@@ -31,7 +30,7 @@ export default function PhotoYou() {
 
   useEffect(() => {
     dispatch(getAllPhotos())
-  }, [])
+  }, [dispatch])
 
   if (sessionUser) {
     return (
