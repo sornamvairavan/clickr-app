@@ -1,11 +1,15 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Comment } = require('../../db/models');
+const { Comment, Photo } = require('../../db/models');
 
 const router = express.Router();
 
 router.get("/", asyncHandler(async (req, res) => {
-  const comments = await Comment.findAll();
+  const comments = await Comment.findAll({
+    include: {
+      all: true
+    }
+  });
 
   return res.json({
     comments
@@ -29,7 +33,11 @@ router.post("/", asyncHandler(async (req, res) => {
 
 router.delete("/:id(\\d+)", asyncHandler(async(req, res) => {
   const commentId = req.body.commentId
-  const commentToDelete = await Comment.findByPk(commentId)
+  const commentToDelete = await Comment.findByPk(commentId, {
+    include: {
+      model: Photo
+    }
+  })
 
     if(commentToDelete) {
     await commentToDelete.destroy()

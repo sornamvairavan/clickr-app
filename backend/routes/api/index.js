@@ -10,6 +10,6 @@ router.use('/users', usersRouter)
 
 router.use('/photos', photosRouter)
 
-router.use('/photos', commentsRouter)
+router.use('/comments', commentsRouter)
 
 module.exports = router;

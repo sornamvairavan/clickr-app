@@ -1,13 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import { deletePhotoById } from '../../store/photo'
+import { deletePhotoById, getAllPhotos } from '../../store/photo'
+import CommentsComponent from '../Comments';
+
 import './PhotoDetails.css'
+import { getAllComments } from '../../store/comment';
 
 export default function PhotoDetails(photoId) {
   const dispatch = useDispatch();
   let photosId = photoId.photoId
   const photo = useSelector(state => state.photo[photosId])
   const userId = useSelector(state => state.session.user.id);
+
+  useEffect(() => {
+    dispatch(getAllPhotos())
+    dispatch(getAllComments())
+  }, [dispatch])
 
   const deletePhotoButton = () => {
     const deletedPhoto = dispatch(deletePhotoById(photo.id))
@@ -25,12 +34,13 @@ export default function PhotoDetails(photoId) {
             <h2 className="photo-caption">{photo?.caption}</h2>
             <p>by: <span>{photo?.User.username}</span></p>
             {userId === photo?.userId && 
-              <Link to={`/${photo?.id}/edit`} className="photo-edit-button">
+              <Link to={`/photos/${photo?.id}/edit`} className="photo-edit-button">
                 Edit</Link>}
             {userId === photo?.userId && 
               <button onClick={deletePhotoButton} 
                className="photo-delete-button">
                 Delete</button>}
+            <CommentsComponent photoId={photo?.id}/>
           </div>
         </div>
       </div>

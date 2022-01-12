@@ -33,7 +33,7 @@ export const getAllComments = () => async(dispatch) => {
   const response = await csrfFetch('/api/comments');
 
   if (response.ok) {
-    const data = await response.json()
+    const data = await response.json();
     dispatch(load_comments(data.comments))
     return data.comments;
   }
@@ -80,11 +80,12 @@ export default function commentReducer(state = {}, action) {
       action.comments.forEach((comment) => {
         allComments[comment.id] = comment
       })
+      return allComments;
 
     case ADD_COMMENT:
       allComments = {...state}
       allComments[action.comment.id] = action.comment;
-      return allComments
+      return allComments;
 
     case DELETE_COMMENT:
       allComments = {...state}
