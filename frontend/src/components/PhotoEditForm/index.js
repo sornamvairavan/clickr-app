@@ -65,6 +65,7 @@ export default function PhotoEditForm() {
               <label htmlFor="yes">
               <input
                 type="radio"
+                id="yes"
                 value={true}
                 name="isPublic"
                 checked={isPublic === true}
@@ -74,6 +75,7 @@ export default function PhotoEditForm() {
               <label htmlFor="no">
               <input
                 type="radio"
+                id="no"
                 value={false}
                 name="isPublic"
                 checked={isPublic === false}
