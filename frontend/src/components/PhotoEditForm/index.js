@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory, Redirect, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { updatePhotoById, getAllPhotos } from '../../store/photo'
 
 export default function PhotoEditForm() {
@@ -35,12 +35,6 @@ export default function PhotoEditForm() {
       history.push("/")
     }
   }
-
-  // if (photo?.userId !== Number(sessionUser.id)) {
-  //   return (
-  //     <Redirect to="/" />
-  //   )
-  // }
 
   return (
     <>
@@ -87,6 +81,6 @@ export default function PhotoEditForm() {
         </div>
       </form>
     </div>}
-    </>
+  </>
   )
 }
