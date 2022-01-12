@@ -9,12 +9,12 @@ export default function CommentsComponent(photoId) {
   const history = useHistory()
 
   const [content, setContent] = useState('')
+  const [delCom, setDelCom] = useState('')
 
   useEffect(() => {
     dispatch(commentActions.getAllComments())
-  }, [dispatch])
-  
-
+    return setDelCom('')
+  }, [dispatch, content, delCom])
 
   let idOfPhoto = photoId.photoId;
   const userId = useSelector(state => state.session.user.id);
@@ -35,12 +35,6 @@ export default function CommentsComponent(photoId) {
     let newComment = dispatch(commentActions.addComment(payload))
     if(newComment) {
       setContent('')
-      let pathname = window.location.pathname;
-      if (pathname === "/explore" || pathname === "/") {
-        history.push(`/photos/${idOfPhoto}`)
-      } else {
-        window.location.reload()
-      }
     }
   }
 
@@ -48,12 +42,7 @@ export default function CommentsComponent(photoId) {
     let deletedComment = dispatch(commentActions.deleteCommmentById(e.target.id))
     
     if(deletedComment) {
-      let pathname = window.location.pathname;
-      if (pathname === "/explore" || pathname === "/") {
-        history.push(`/photos/${idOfPhoto}`)
-      } else {
-        window.location.reload()
-      }
+      setDelCom('Delete successful')
     }
   }
 

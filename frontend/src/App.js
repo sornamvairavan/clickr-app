@@ -34,12 +34,12 @@ function App() {
           <Route path="/uploadPhoto">
             <PhotoAddForm />
           </Route>
-          <Route path="/photos/:photoId" exact render={(props) => {
+          {/* <Route path="/photos/:photoId" exact render={(props) => {
             const photoId = props.match.params.photoId
             return <PhotoDetails photoId={photoId}/>
           }}
             >
-          </Route>
+          </Route> */}
           <Route path="/photos/:photoId/edit">
             <PhotoEditForm />
           </Route>
