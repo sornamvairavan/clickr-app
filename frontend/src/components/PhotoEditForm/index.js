@@ -6,23 +6,19 @@ import { updatePhotoById, getAllPhotos } from '../../store/photo'
 export default function PhotoEditForm() {
   const {photoId} = useParams();
   const dispatch = useDispatch();
-  
   const history = useHistory()
+
   const sessionUser = useSelector(state => state.session.user)
-  const photo = useSelector(state => state.photo[photoId])
+  const photo = useSelector(state => ({...state.photo[photoId]}))
 
   useEffect(() => {
-    // setTimeout(()=> setPhotoUrl(photo?.photoUrl), 20)
-    // setTimeout(()=> setCaption(photo?.caption), 20)
-    // setTimeout(()=> setIsPublic(photo?.isPublic), 20)
     dispatch(getAllPhotos())
-
   }, [dispatch])
 
-  const [photoUrl, setPhotoUrl] = useState(photo?.photoUrl)
-  const [caption, setCaption] = useState(photo?.caption)
-  const [isPublic, setIsPublic] = useState(photo?.isPublic)
 
+  const [photoUrl, setPhotoUrl] = useState(photo.photoUrl)
+  const [caption, setCaption] = useState(photo.caption)
+  const [isPublic, setIsPublic] = useState(photo.isPublic)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,18 +36,20 @@ export default function PhotoEditForm() {
     }
   }
 
-  if (!sessionUser) {
-    return (
-      <Redirect to="/" />
-    )
-  }
+  // if (photo?.userId !== Number(sessionUser.id)) {
+  //   return (
+  //     <Redirect to="/" />
+  //   )
+  // }
 
   return (
-    <div className="add-photo-container">
+    <>
+    {photo.photoUrl && 
+      <div className="add-photo-container">
       <form className='add-photo-form' onSubmit={handleSubmit}>
         <h1 className="add-form-title">Edit Photo</h1>
         <div className="add-input-container">
-          <a href={photoUrl} target="_blank" rel="noreferrer" className="photoUrl">Photo URL</a>
+          <a href={photo.photoUrl || photoUrl} target="_blank" rel="noreferrer" className="photoUrl">Photo URL</a>
           <label htmlFor="caption">Caption</label>
           <input 
             type="text"
@@ -60,6 +58,7 @@ export default function PhotoEditForm() {
             placeholder='Optional caption'
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
+            defaultValue={photo.caption}
           />
           <label htmlFor="isPublic">Visible to everyone?</label>
             <span className="add-photo-radio">
@@ -85,6 +84,7 @@ export default function PhotoEditForm() {
           <button type="submit" className="add-photo-button">Save Changes</button>
         </div>
       </form>
-    </div>
+    </div>}
+    </>
   )
 }

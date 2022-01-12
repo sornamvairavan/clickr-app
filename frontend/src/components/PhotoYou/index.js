@@ -32,6 +32,7 @@ export default function PhotoYou() {
     dispatch(getAllPhotos())
   }, [dispatch])
 
+
   if (sessionUser) {
     return (
       <>
@@ -54,7 +55,6 @@ export default function PhotoYou() {
   else {
     return (
       <SplashPage />
-
     )
 
   }

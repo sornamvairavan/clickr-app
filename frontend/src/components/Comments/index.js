@@ -51,8 +51,8 @@ export default function CommentsComponent(photoId) {
     <div>
       <div className='comments-header'>Comments</div>
         <div className='comments-container'>
-          {photoComments.length > 0 && photoComments.map((comment, idx) => (
-            <div key={idx*5} className="comments-content">
+          {photoComments.length > 0 && photoComments.map((comment, idx, idx2) => (
+            <div key={idx*100} className="comments-content">
               <div key={idx}>{comment.User.username}: </div>
               <span key={comment.id}>{comment.content}
                 {comment.User.id === userId && 
