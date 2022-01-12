@@ -9,6 +9,7 @@ import PhotoYou from './components/PhotoYou'
 import PhotoExplore from './components/PhotoExplore'
 import PhotoAddForm from './components/PhotoAddForm'
 import PhotoEditForm from "./components/PhotoEditForm";
+import PhotoDetails from "./components/PhotoDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +34,13 @@ function App() {
           <Route path="/uploadPhoto">
             <PhotoAddForm />
           </Route>
-          <Route path="/:photoId/edit">
+          <Route path="/photos/:photoId" exact render={(props) => {
+            const photoId = props.match.params.photoId
+            return <PhotoDetails photoId={photoId}/>
+          }}
+            >
+          </Route>
+          <Route path="/photos/:photoId/edit">
             <PhotoEditForm />
           </Route>
           <Route path="/login">

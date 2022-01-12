@@ -16,6 +16,7 @@
 #photo-details {
   background-color: white;
   min-width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.452);
 }
 
 .photo-caption {

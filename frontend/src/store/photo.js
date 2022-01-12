@@ -1,6 +1,6 @@
 import { csrfFetch } from './csrf'
 
-const LOAD_PHOTOS = "photos/LOAD";
+const LOAD_PHOTOS = "photos/LOAD_PHOTOS";
 const ADD_PHOTO = "photos/ADD_PHOTO";
 const UPDATE_PHOTO = "photos/UPDATE_PHOTO";
 const DELETE_PHOTO = "photos/DELETE_PHOTO";

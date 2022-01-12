@@ -1,0 +1,57 @@
+.comments-header {
+  margin: 15px 0px 2px 0px;
+  font-size: 13px;
+  color: gray;
+  border-top: 1px rgba(128, 128, 128, 0.377) solid;
+  padding: 10px 10px 0px 10px;
+}
+
+.comments-container {
+  overflow-y: auto;
+}
+
+.comments-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-content > div {
+  font-size: 13px;
+  margin: 0 0px 0 15px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: rgba(29, 64, 71, 0.836)
+}
+
+.comments-content > span {
+  font-size: 12px;
+  margin: 0 0px 0 20px;
+  font-weight: 400;
+  color: rgba(29, 64, 71, 0.836)
+}
+
+.fa-times {
+  margin-left: 10px;
+}
+
+.post-comment {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgba(128, 128, 128, 0.541);
+}
+
+.post-comment input {
+  width: 250px;
+  height: 25px;
+  border: none;
+}
+
+.post-comment button {
+  border: none;
+  background-color: white;
+  color: #0095f6;
+  font-weight: 600;
+  width: auto;
+}
