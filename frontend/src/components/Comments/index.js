@@ -1,20 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as commentActions from '../../store/comment';
 import './Comments.css'
 
 export default function CommentsComponent(photoId) {
   const dispatch = useDispatch()
-  const history = useHistory()
 
   const [content, setContent] = useState('')
+  const [addCom, setAddCom] = useState('')
   const [delCom, setDelCom] = useState('')
 
   useEffect(() => {
     dispatch(commentActions.getAllComments())
-    return setDelCom('')
-  }, [dispatch, content, delCom])
+      setDelCom('')
+      setAddCom('')
+  }, [dispatch, addCom, delCom])
 
   let idOfPhoto = photoId.photoId;
   const userId = useSelector(state => state.session.user.id);
@@ -35,6 +35,7 @@ export default function CommentsComponent(photoId) {
     let newComment = dispatch(commentActions.addComment(payload))
     if(newComment) {
       setContent('')
+      setAddCom("Added Comment")
     }
   }
 
