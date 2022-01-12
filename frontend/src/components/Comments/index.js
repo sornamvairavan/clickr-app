@@ -60,25 +60,26 @@ export default function CommentsComponent(photoId) {
   return (
     <div>
       <div className='comments-header'>Comments</div>
-      {photoComments.length > 0 && photoComments.map((comment, idx) => (
-        <div key={idx*5}>
-          <span key={idx}>{comment.User.username}: </span>
-          <span key={comment.id}>{comment.content}</span>
-          {comment.User.id === userId && 
-          <i className="fas fa-times" id={comment.id} onClick={deleteComment}></i>}
+        <div className='comments-container'>
+          {photoComments.length > 0 && photoComments.map((comment, idx) => (
+            <div key={idx*5} className="comments-content">
+              <div key={idx}>{comment.User.username}: </div>
+              <span key={comment.id}>{comment.content}
+                {comment.User.id === userId && 
+                  <i className="fas fa-times" id={comment.id} onClick={deleteComment}></i>}</span>
+            </div>
+          ))}
         </div>
-      ))}
-      <div>
-        <input
-          type="text"
-          placeholder='Add a comment'
-          autoComplete="off"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          />
-          <button disabled={!content.length} onClick={postComment} type="submit">Post</button>
-      </div>
-
+        <div className="post-comment">
+          <input
+            type="text"
+            placeholder='Add a comment...'
+            autoComplete="off"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            />
+            <button disabled={!content.length} onClick={postComment} type="submit">Post</button>
+        </div>
     </div>
   )
 }
