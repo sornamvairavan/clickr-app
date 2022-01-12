@@ -9,8 +9,8 @@ import { getAllComments } from '../../store/comment';
 
 export default function PhotoDetails(photoId) {
   const dispatch = useDispatch();
-  let photosId = photoId.photoId
-  const photo = useSelector(state => state.photo[photosId])
+  let idOfPhoto = photoId.photoId
+  const photo = useSelector(state => state.photo[idOfPhoto])
   const userId = useSelector(state => state.session.user.id);
 
   useEffect(() => {

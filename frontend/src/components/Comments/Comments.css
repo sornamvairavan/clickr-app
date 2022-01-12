@@ -34,6 +34,11 @@
   margin-left: 10px;
 }
 
+.fa-times:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
 .post-comment {
   position: absolute;
   bottom: 0px;

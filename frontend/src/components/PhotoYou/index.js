@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal';
-import PhotoDetails from '../PhotoDetails'
 import { getAllPhotos } from '../../store/photo'
+import PhotoDetails from '../PhotoDetails'
 import SplashPage from '../SplashPage';
 import './Photos.css';
 
@@ -34,23 +35,33 @@ export default function PhotoYou() {
 
 
   if (sessionUser) {
-    return (
-      <>
-        <div className='photos-container'>
-          {userPhotos.map(photo => (
-            <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id}
-              className="displayedPhotos"
-              onClick={openPhotoDetails}
-              />
-          ))}
+    console.log("user", userPhotos)
+    if (userPhotos.length > 0) {
+      return (
+        <>
+          <div className='photos-container'>
+            {userPhotos.map(photo => (
+              <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id}
+                className="displayedPhotos"
+                onClick={openPhotoDetails}
+                />
+            ))}
+          </div>
+          {showModal && (
+          <Modal onClose={() => setShowModal(false)}>
+            <PhotoDetails photoId={photosId}/>
+          </Modal>
+        )}
+        </>
+      )
+    } else {
+      return (
+        <div className="no-photos-container">
+          <p>You have no photos to show here.</p>
+          <Link to="/uploadPhoto">Upload Photo</Link>
         </div>
-        {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <PhotoDetails photoId={photosId}/>
-        </Modal>
-      )}
-      </>
-    )
+      )
+    }
   }
   else {
     return (

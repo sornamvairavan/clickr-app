@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage'
@@ -9,7 +9,8 @@ import PhotoYou from './components/PhotoYou'
 import PhotoExplore from './components/PhotoExplore'
 import PhotoAddForm from './components/PhotoAddForm'
 import PhotoEditForm from "./components/PhotoEditForm";
-import PhotoDetails from "./components/PhotoDetails";
+import PageNotFound from "./components/PageNotFound";
+// import PhotoDetails from "./components/PhotoDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
       .then(() => setIsLoaded(true))
   }, [dispatch])
 
+
   return (
     <>
       <Navigation isLoaded={isLoaded} />
@@ -28,10 +30,10 @@ function App() {
           <Route path="/" exact>
             <PhotoYou />
           </Route>
-          <Route path="/explore">
+          <Route path="/explore" exact>
             <PhotoExplore />
           </Route>
-          <Route path="/uploadPhoto">
+          <Route path="/uploadPhoto" exact>
             <PhotoAddForm />
           </Route>
           {/* <Route path="/photos/:photoId" exact render={(props) => {
@@ -40,7 +42,7 @@ function App() {
           }}
             >
           </Route> */}
-          <Route path="/photos/:photoId/edit">
+          <Route path="/photos/:photoId/edit" exact>
             <PhotoEditForm />
           </Route>
           <Route path="/login">
@@ -48,6 +50,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route>
+            <PageNotFound />
           </Route>
         </Switch> )}
     </>
