@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   Photo.associate = function(models) {
     // associations can be defined here
     Photo.belongsTo(models.User, {foreignKey: 'userId'})
-    Photo.hasMany(models.Comment, {foreignKey: 'photoId'})
-    Photo.hasMany(models.Like, {foreignKey: 'photoId'})
+    Photo.hasMany(models.Comment, {foreignKey: 'photoId', onDelete: 'CASCADE', hooks: true })
+    Photo.hasMany(models.Like, {foreignKey: 'photoId', onDelete: 'CASCADE', hooks: true })
   };
   return Photo;
 };

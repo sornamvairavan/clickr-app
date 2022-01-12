@@ -12,16 +12,17 @@ export default function PhotoEditForm() {
   const photo = useSelector(state => state.photo[photoId])
 
   useEffect(() => {
+    // setTimeout(()=> setPhotoUrl(photo?.photoUrl), 20)
+    // setTimeout(()=> setCaption(photo?.caption), 20)
+    // setTimeout(()=> setIsPublic(photo?.isPublic), 20)
     dispatch(getAllPhotos())
+
   }, [dispatch])
 
   const [photoUrl, setPhotoUrl] = useState(photo?.photoUrl)
   const [caption, setCaption] = useState(photo?.caption)
   const [isPublic, setIsPublic] = useState(photo?.isPublic)
 
-  setTimeout(()=> setPhotoUrl(photo?.photoUrl), 20)
-  setTimeout(()=> setCaption(photo?.caption), 20)
-  setTimeout(()=> setIsPublic(photo?.isPublic), 20)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
