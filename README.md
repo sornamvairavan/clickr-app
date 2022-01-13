@@ -4,8 +4,15 @@
 ## Clickr setup
 
 To run this App locally:
-  1. Git clone this repo (https://github.com/sornamvairavan/clickr-app.git)
-  2. Run `npm install` in the root directory of the clickr-app folder.
+  1. Git clone this repo (*https://github.com/sornamvairavan/clickr-app.git*)
+  3. Run `npm install` in both the backend and frontend folders that are within the clickr-app folder to install the relevant packages.
+  4. Create a `.env` file to define the environment variables, based on `.env.example` file in the backend folder - Add a user password and a strong JWT secret.
+  5. Create a database user using the same credentials in the `.env` file with the ability to create databases - `psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"`
+  6. Create the database using sequelize - `npx dotenv sequelize db:create`
+  7. Run `npx dotenv sequelize db:migrate` to migrate the database.
+  8. Run `npx dotenv sequelize db:seed:all` to seed the database.
+  9. Run `npm start` in the backend folder to start the backend sever and also run `npm start` in your frontend folder to start the React frontend server.
+  10. Navigate to *http://localhost:3000*.
 
 ## Technologies used
   - React
