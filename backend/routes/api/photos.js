@@ -13,7 +13,7 @@ photoValidations = [
     .isURL()
     .withMessage("Please provide a valid URL"),
   check("isPublic")
-    .exists({ checkFalsy: true })
+    .isBoolean()
     .withMessage("Please select if you want the photo to be set to Public"),
   handleValidationErrors
 ]
