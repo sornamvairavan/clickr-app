@@ -19,12 +19,48 @@ figure {
   border-radius: 2px;
 }
 
+.image_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.25s;
+}
 
-.displayedPhotos:hover {
-  opacity: 80%;
+.image_overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.image_overlay:hover {
+  opacity: 1;
   cursor: pointer;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
+
+.image_overlay:hover > * {
+  transform: translateY(0);
+}
+
+.image_username {
+  font-size: 15px;
+  margin: 30px;
+  font-weight: 500;
+}
+
+.image_comments {
+  position: absolute;
+  align-self: flex-end;
+  bottom: 30px;
+  right: 30px;
+}
+
 
 .no-photos-container {
   margin: 120px;

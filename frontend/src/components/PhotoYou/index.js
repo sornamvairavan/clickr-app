@@ -47,7 +47,7 @@ export default function PhotoYou() {
                   />
                   <div className="image_overlay">
                     <div className="image_username">{photo?.User?.username}</div>
-                    <div className="image_comments">{photo?.Comments?.length} <i className="far fa-comment"></i></div>
+                    <div className="image_comments">{photo?.Comments?.length} <i class="fas fa-comment"></i></div>
                   </div>
               </figure>
             ))}
