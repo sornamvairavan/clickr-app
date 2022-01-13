@@ -112,13 +112,6 @@ module.exports = {
         caption: "Minimal mood.",
         isPublic: true
       },
-
-      {
-        userId: 4,
-        photoUrl: "https://images.unsplash.com/photo-1641921402989-c4401ec91e2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-        caption: "Greens",
-        isPublic: true
-      },
       {
         userId: 3,
         photoUrl: "https://images.unsplash.com/photo-1639402479778-bcb2d2fbb69e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80",
@@ -153,12 +146,6 @@ module.exports = {
         userId: 9,
         photoUrl: "https://images.unsplash.com/photo-1576777486781-4fc7184eb4f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=656&q=80",
         caption: "",
-        isPublic: true
-      },
-      {
-        userId: 8,
-        photoUrl: "https://images.unsplash.com/photo-1641928179729-cf86bd973705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-        caption: "Fall",
         isPublic: true
       },
       {
