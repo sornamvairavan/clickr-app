@@ -11,13 +11,15 @@ To run this App locally:
   6. Create the database using sequelize - `npx dotenv sequelize db:create`
   7. Run `npx dotenv sequelize db:migrate` to migrate the database.
   8. Run `npx dotenv sequelize db:seed:all` to seed the database.
-  9. Run `npm start` in the backend folder to start the backend sever and also run `npm start` in your frontend folder to start the React frontend server.
+  9. Run `npm start` in the backend folder to start the Express backend sever and also run `npm start` in your frontend folder to start the React frontend server.
   10. Navigate to *http://localhost:3000*.
 
 ## Technologies used
   - React
   - Redux
   - Javascript / JSX
+  - HTML
+  - CSS
   - Express
   - Sequelize
   - PostgreSQL
