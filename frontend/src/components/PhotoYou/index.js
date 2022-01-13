@@ -46,7 +46,7 @@ export default function PhotoYou() {
                   />
                   <div className="image_overlay" onClick={openPhotoDetails} id={photo?.id}>
                     <div className="image_username">{photo?.User?.username}</div>
-                    <div className="image_comments">{photo?.Comments?.length} <i class="fas fa-comment"></i></div>
+                    <div className="image_comments">{photo?.Comments?.length} <i className="fas fa-comment"></i></div>
                   </div>
               </figure>
             ))}

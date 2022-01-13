@@ -28,7 +28,7 @@ module.exports = {
         isPublic: true
       },
       {
-        userId: 3,
+        userId: 9,
         photoUrl: "https://images.unsplash.com/photo-1533101062-8970cf1aabf2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         caption: "The beautiful views of the Hooker Valley Track are so special. Winter is the best time of year to go for snow capped peaks and an adventurous walk to the glacier.",
         isPublic: true
@@ -52,7 +52,7 @@ module.exports = {
         isPublic: true
       },
       {
-        userId: 2,
+        userId: 7,
         photoUrl: "https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGhvdG98ZW58MHx8MHx8&w=1000&q=80",
         caption: "Shot on Canon, EOD 6D",
         isPublic: true
@@ -89,12 +89,101 @@ module.exports = {
         isPublic: true
       },
       {
-        userId: 4,
+        userId: 7,
         photoUrl: "https://images.unsplash.com/photo-1572357176061-7c96fd2af22f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         caption: "This picture is part of a set of photos that were taken towards the end of the summer to realize one of my projects that was close to my heart: making a calendar for the coming year. Because I like to admire the colour and textures, vegetables are an excellent choice because they can offer a whole show for the eyes all year round! Visit my website this calendar named Harvest Collection!",
         isPublic: true
       },
-
+      {
+        userId: 8,
+        photoUrl: "https://images.unsplash.com/photo-1641829108041-e94a7d3537a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        caption: "My Husky",
+        isPublic: true
+      },
+      {
+        userId: 4,
+        photoUrl: "https://images.unsplash.com/photo-1641921402989-c4401ec91e2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "Greens",
+        isPublic: true
+      },
+      {
+        userId: 3,
+        photoUrl: "https://images.unsplash.com/photo-1639402479778-bcb2d2fbb69e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80",
+        caption: "Tried to shoot my version of Natgeo photo of the year",
+        isPublic: true
+      },
+      {
+        userId: 6,
+        photoUrl: "https://images.unsplash.com/photo-1641906998681-b8fb47994afc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "One of my wedding couples",
+        isPublic: true
+      },
+      {
+        userId: 7,
+        photoUrl: "https://images.unsplash.com/photo-1638720772346-b745bcd72f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1177&q=80",
+        caption: "Avocado Toast From series Taste for Adventure",
+        isPublic: true
+      },
+      {
+        userId: 1,
+        photoUrl: "https://images.unsplash.com/photo-1641896475683-94641e3b2bed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "Mandarines on a wooden saw cut",
+        isPublic: true
+      },
+      {
+        userId: 5,
+        photoUrl: "https://images.unsplash.com/photo-1641921402984-80bb92e69e6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "Editorial",
+        isPublic: true
+      },
+      {
+        userId: 9,
+        photoUrl: "https://images.unsplash.com/photo-1576777486781-4fc7184eb4f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=656&q=80",
+        caption: "",
+        isPublic: true
+      },
+      {
+        userId: 8,
+        photoUrl: "https://images.unsplash.com/photo-1641928179729-cf86bd973705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "Fall",
+        isPublic: true
+      },
+      {
+        userId: 7,
+        photoUrl: "https://images.unsplash.com/photo-1641928179729-cf86bd973705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "Made with Blender + Photoshop for the Collage Effect",
+        isPublic: true
+      },
+      {
+        userId: 2,
+        photoUrl: "https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+        caption: "Beautiful morning at Andenes",
+        isPublic: true
+      },
+      {
+        userId: 5,
+        photoUrl: "https://images.unsplash.com/photo-1641679644331-0b52e184c0f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80",
+        caption: "Trinity Alps, California, USA",
+        isPublic: true
+      },
+      {
+        userId: 8,
+        photoUrl: "https://images.unsplash.com/photo-1640264974125-ce9c3ebcfe22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
+        caption: "Essentials",
+        isPublic: true
+      },
+      {
+        userId: 3,
+        photoUrl: "https://images.unsplash.com/photo-1641063157251-ae9d815e5daa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80",
+        caption: "",
+        isPublic: true
+      },
+      {
+        userId: 4,
+        photoUrl: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
+        caption: "",
+        isPublic: true
+      },
     ], {});
   },
 
