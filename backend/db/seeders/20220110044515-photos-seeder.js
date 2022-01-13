@@ -95,7 +95,7 @@ module.exports = {
         isPublic: true
       },
       {
-        userId: 1,
+        userId: 9,
         photoUrl: "https://images.unsplash.com/photo-1637354390131-37b41d14b41b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80",
         caption: "Perfect symmetry",
         isPublic: true
@@ -110,12 +110,6 @@ module.exports = {
         userId: 1,
         photoUrl: "https://images.unsplash.com/photo-1639733755368-7d0b2507e429?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
         caption: "Minimal mood.",
-        isPublic: true
-      },
-      {
-        userId: 3,
-        photoUrl: "https://images.unsplash.com/photo-1639402479778-bcb2d2fbb69e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80",
-        caption: "Tried to shoot my version of Natgeo photo of the year",
         isPublic: true
       },
       {
@@ -143,7 +137,7 @@ module.exports = {
         isPublic: true
       },
       {
-        userId: 9,
+        userId: 1,
         photoUrl: "https://images.unsplash.com/photo-1576777486781-4fc7184eb4f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=656&q=80",
         caption: "",
         isPublic: true
