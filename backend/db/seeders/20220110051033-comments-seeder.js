@@ -4,14 +4,14 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Comments', [
       {
-        userId: 1,
+        userId: 6,
         photoId: 1,
-        content: "Love the colors!"
+        content: "Such beautiful scenes. I wonder what the view is like from the top"
       },
       {
-        userId: 5,
+        userId: 3,
         photoId: 2,
-        content: "Such beautiful scenes. I wonder what the view is like from the top"
+        content: "Wow!"
       },
       {
         userId: 4,
@@ -31,7 +31,7 @@ module.exports = {
       {
         userId: 2,
         photoId: 7,
-        content: "Amazing!"
+        content: "Love the colors!"
       },
       {
         userId: 5,
@@ -39,9 +39,14 @@ module.exports = {
         content: "Wow!"
       },
       {
-        userId: 5,
+        userId: 9,
         photoId: 10,
-        content: "Beautiful!"
+        content: "Nice shot!"
+      },
+      {
+        userId: 2,
+        photoId: 14,
+        content: "Looks good!"
       },
 
   ], {});
