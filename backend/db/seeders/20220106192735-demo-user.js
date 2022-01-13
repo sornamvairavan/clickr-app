@@ -31,7 +31,7 @@ module.exports = {
       {
         fullName: 'Rajesh Nair',
         email: 'rajeshnair@email.com',
-        username: 'rajnair93',
+        username: 'rajnair',
         hashedPassword: bcrypt.hashSync('password123!')
       },
       {
@@ -61,7 +61,7 @@ module.exports = {
       {
         fullName: 'Warren Williams',
         email: 'warrenwilliams@email.com',
-        username: 'warrenwilliams56',
+        username: 'warrenwilliams',
         hashedPassword: bcrypt.hashSync('password123!')
       },
     ], {});
