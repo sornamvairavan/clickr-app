@@ -37,10 +37,10 @@ export default function YouPage() {
       <div className='photos-container'>
         {publicPhotos.map((photo, idx) => (
           <figure key={idx}>
-            <img src={photo.photoUrl} alt={photo.caption} id={photo.id}
+            <img src={photo.photoUrl} alt={photo.caption} 
               className="displayedPhotos"
-              onClick={openPhotoDetails}/>
-            <div className="image_overlay">
+              />
+            <div className="image_overlay" id={photo.id} onClick={openPhotoDetails}>
               <div className="image_username">{photo?.User?.username}</div>
               <div className="image_comments">{photo?.Comments?.length} <i class="fas fa-comment"></i></div>
             </div>
