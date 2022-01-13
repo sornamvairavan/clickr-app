@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     content: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        min: 1
+      }
     }
   }, {});
   Comment.associate = function(models) {
