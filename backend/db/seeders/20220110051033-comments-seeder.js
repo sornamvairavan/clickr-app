@@ -11,7 +11,7 @@ module.exports = {
       {
         userId: 5,
         photoId: 2,
-        content: "Wow!"
+        content: "Such beautiful scenes. I wonder what the view is like from the top"
       },
       {
         userId: 4,
@@ -25,13 +25,18 @@ module.exports = {
       },
       {
         userId: 6,
-        photoId: 5,
+        photoId: 3,
         content: "I totally agree!"
       },
       {
         userId: 2,
         photoId: 7,
         content: "Amazing!"
+      },
+      {
+        userId: 5,
+        photoId: 10,
+        content: "Wow!"
       },
       {
         userId: 5,
