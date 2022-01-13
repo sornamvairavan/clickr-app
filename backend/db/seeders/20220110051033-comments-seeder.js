@@ -6,7 +6,7 @@ module.exports = {
       {
         userId: 1,
         photoId: 1,
-        content: "Nice shot!"
+        content: "Love the colors!"
       },
       {
         userId: 5,

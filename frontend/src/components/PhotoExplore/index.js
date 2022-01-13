@@ -42,7 +42,7 @@ export default function YouPage() {
               />
             <div className="image_overlay" id={photo.id} onClick={openPhotoDetails}>
               <div className="image_username">{photo?.User?.username}</div>
-              <div className="image_comments">{photo?.Comments?.length} <i class="fas fa-comment"></i></div>
+              <div className="image_comments">{photo?.Comments?.length} <i className="fas fa-comment"></i></div>
             </div>
           </figure>
         ))}

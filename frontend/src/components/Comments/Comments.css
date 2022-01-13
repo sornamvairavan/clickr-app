@@ -1,3 +1,7 @@
+.comments-container {
+  width: 100%;
+}
+
 .comments-header {
   margin: 15px 0px 2px 0px;
   font-size: 13px;
@@ -5,10 +9,10 @@
   border-top: 1px rgba(128, 128, 128, 0.377) solid;
   padding: 10px 10px 0px 10px;
 }
-
-.comments-container {
-  overflow-y: auto;
-}
+/* 
+.comments-list {
+  overflow-y: scroll;
+} */
 
 .comments-content {
   display: flex;
@@ -42,15 +46,16 @@
 .post-comment {
   position: absolute;
   bottom: 0px;
-  display: flex;
-  justify-content: center;
-  border: 1px solid rgba(128, 128, 128, 0.541);
+  border-top: 1px solid rgba(128, 128, 128, 0.322);
+  display: inline-flex;
 }
 
 .post-comment input {
   width: 250px;
   height: 25px;
   border: none;
+  padding: 2px;
+  margin: 2px;
 }
 
 .post-comment button {
@@ -59,4 +64,14 @@
   color: #0095f6;
   font-weight: 600;
   width: auto;
+  cursor: pointer;
+}
+
+.post-comment button:disabled {
+  border: none;
+  background-color: white;
+  color: #0094f6a9;
+  font-weight: 400;
+  width: auto;
+  cursor: auto;
 }

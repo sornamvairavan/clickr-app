@@ -34,6 +34,12 @@ module.exports = {
         isPublic: true
       },
       {
+        userId: 1,
+        photoUrl: "https://images.unsplash.com/photo-1637580980556-085dee659c7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        caption: "Mt. Fitz Roy on sunrise",
+        isPublic: true
+      },
+      {
         userId: 6,
         photoUrl: "https://images.unsplash.com/photo-1639896773569-ba2bde2f9164?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
         caption: "",
@@ -70,12 +76,7 @@ module.exports = {
         caption: "This photo was captured on an adventure across the beautiful Namibian landscape, in Africa. Endless rolling dunes shadowed shapes onto the sand as far as the eye could see. The only trace of life is left in the wake of footprints briefly following your lead, before being swept away by the wind. What a beautiful place.",
         isPublic: true
       },
-      {
-        userId: 1,
-        photoUrl: "https://images.unsplash.com/photo-1637580980556-085dee659c7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
-        caption: "Mt. Fitz Roy on sunrise",
-        isPublic: true
-      },
+
       {
         userId: 5,
         photoUrl: "https://images.unsplash.com/photo-1564371637326-768793b60f8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
@@ -188,6 +189,12 @@ module.exports = {
         userId: 10,
         photoUrl: "https://images.unsplash.com/photo-1641979284150-c0a5fae70674?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         caption: "Trees freshly dusted in snow catch the early morning sun.",
+        isPublic: true
+      },
+      {
+        userId: 4,
+        photoUrl: "https://images.unsplash.com/photo-1607278967956-0f4ce38a8af5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "Shot on Canon, EOS R5",
         isPublic: true
       },
     ], {});
