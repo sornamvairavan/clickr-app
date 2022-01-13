@@ -95,11 +95,24 @@ module.exports = {
         isPublic: true
       },
       {
+        userId: 1,
+        photoUrl: "https://images.unsplash.com/photo-1637354390131-37b41d14b41b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80",
+        caption: "Perfect symmetry",
+        isPublic: true
+      },
+      {
         userId: 8,
         photoUrl: "https://images.unsplash.com/photo-1641829108041-e94a7d3537a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         caption: "My Husky",
         isPublic: true
       },
+      {
+        userId: 1,
+        photoUrl: "https://images.unsplash.com/photo-1639733755368-7d0b2507e429?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+        caption: "Minimal mood.",
+        isPublic: true
+      },
+
       {
         userId: 4,
         photoUrl: "https://images.unsplash.com/photo-1641921402989-c4401ec91e2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
@@ -150,7 +163,7 @@ module.exports = {
       },
       {
         userId: 7,
-        photoUrl: "https://images.unsplash.com/photo-1641928179729-cf86bd973705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        photoUrl: "https://images.unsplash.com/photo-1641747190513-c461cf7ed914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
         caption: "Made with Blender + Photoshop for the Collage Effect",
         isPublic: true
       },
@@ -182,6 +195,12 @@ module.exports = {
         userId: 4,
         photoUrl: "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
         caption: "",
+        isPublic: true
+      },
+      {
+        userId: 2,
+        photoUrl: "https://images.unsplash.com/photo-1639755507638-e34150b56db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        caption: "Vercel Mug",
         isPublic: true
       },
     ], {});
