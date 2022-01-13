@@ -4,21 +4,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Photos', [    
       {
-        userId: 6,
-        photoUrl: "https://images.unsplash.com/photo-1639896773569-ba2bde2f9164?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
-        caption: "",
-        isPublic: true
-      },
-      {
         userId: 2,
         photoUrl: "https://images.unsplash.com/photo-1537211568975-f95f2101c8f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         caption: "Aiguille du Midi",
-        isPublic: true
-      },
-      {
-        userId: 3,
-        photoUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-        caption: "Work flow",
         isPublic: true
       },
       {
@@ -43,6 +31,12 @@ module.exports = {
         userId: 5,
         photoUrl: "https://images.unsplash.com/photo-1534366428-e54c1db0bed4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         caption: "Standing before the beautiful views of the glacial Hooker Lake is so special. Winter iced over the lake waters making it even more magical.",
+        isPublic: true
+      },
+      {
+        userId: 6,
+        photoUrl: "https://images.unsplash.com/photo-1639896773569-ba2bde2f9164?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
+        caption: "",
         isPublic: true
       },
       {
@@ -131,6 +125,12 @@ module.exports = {
         isPublic: true
       },
       {
+        userId: 3,
+        photoUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        caption: "Work flow",
+        isPublic: true
+      },
+      {
         userId: 5,
         photoUrl: "https://images.unsplash.com/photo-1641921402984-80bb92e69e6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
         caption: "Editorial",
@@ -182,6 +182,12 @@ module.exports = {
         userId: 2,
         photoUrl: "https://images.unsplash.com/photo-1639755507638-e34150b56db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
         caption: "Vercel Mug",
+        isPublic: true
+      },
+      {
+        userId: 10,
+        photoUrl: "https://images.unsplash.com/photo-1641979284150-c0a5fae70674?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        caption: "Trees freshly dusted in snow catch the early morning sun.",
         isPublic: true
       },
     ], {});
