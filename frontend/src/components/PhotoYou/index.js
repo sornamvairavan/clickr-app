@@ -35,16 +35,21 @@ export default function PhotoYou() {
 
 
   if (sessionUser) {
-    console.log("user", userPhotos)
     if (userPhotos.length > 0) {
       return (
         <>
           <div className='photos-container'>
-            {userPhotos.map(photo => (
-              <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id}
-                className="displayedPhotos"
-                onClick={openPhotoDetails}
-                />
+            {userPhotos.map((photo, idx) => (
+              <figure key={idx}>
+                <img src={photo?.photoUrl} alt={photo?.caption} id={photo?.id}
+                  className="displayedPhotos"
+                  onClick={openPhotoDetails}
+                  />
+                  <div className="image_overlay">
+                    <div className="image_username">{photo?.User?.username}</div>
+                    <div className="image_comments">{photo?.Comments?.length} <i className="far fa-comment"></i></div>
+                  </div>
+              </figure>
             ))}
           </div>
           {showModal && (

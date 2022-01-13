@@ -1,21 +1,24 @@
 .photos-container {
-  position: relative;
-  top: 85px;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: repeat( 3, 1fr);
-  gap: 10px;
-  align-items: stretch;
+  column-count: 4;
+  margin: 100px auto 100px auto;
+  column-gap: 10px;
   padding: 12px;
 }
 
-.photos-container img {
+figure {
+  margin: 0;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  position: relative;
+}
+
+.displayedPhotos {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
   border-radius: 2px;
 }
+
 
 .displayedPhotos:hover {
   opacity: 80%;

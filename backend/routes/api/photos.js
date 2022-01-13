@@ -21,7 +21,7 @@ photoValidations = [
 router.get("/", asyncHandler(async (req, res) => {
   const photos = await Photo.findAll({
     include: {
-      model: User
+      all: true
     }
   });
   return res.json({

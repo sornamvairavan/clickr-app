@@ -1,12 +1,12 @@
 .splash-container {
-  position: fixed;
   display: grid;
   justify-items: center;
   align-items: center;
   background-image: url("../../../public/images/camera-photo-1.jpeg");
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   z-index: -1;
 }
@@ -34,10 +34,24 @@
 
 .network-links {
   background-color: black;
-  color: white;
   position: fixed;
   bottom: 0px;
-  height: 40px;
+  height: 50px;
+  padding-right: 100px;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 3;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.network-links .fab, .network-links > div {
+  color: rgba(245, 245, 245, 0.8);
+  margin: 10px;
+}
+
+.network-links .fab:hover {
+  color: white;
 }

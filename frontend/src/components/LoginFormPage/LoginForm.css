@@ -1,11 +1,13 @@
 .auth-form-container {
-  position: fixed;
+  display: grid;
+  justify-items: center;
+  align-items: center;
   background-image: url("../../../public/images/mountain-2.jpeg");
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  top: 0;
   z-index: -1;
 }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage'
@@ -45,10 +45,10 @@ function App() {
           <Route path="/photos/:photoId/edit" exact>
             <PhotoEditForm />
           </Route>
-          <Route path="/login">
+          <Route path="/login" exact>
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route path="/signup" exact>
             <SignupFormPage />
           </Route>
           <Route>

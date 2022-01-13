@@ -35,10 +35,14 @@ export default function YouPage() {
   return (
     <>
       <div className='photos-container'>
-        {publicPhotos.map(photo => (
+        {publicPhotos.map((photo, idx) => (
+          <figure key={idx}>
+            <div>{photo?.User?.username}</div>
             <img src={photo.photoUrl} key={photo.id} alt={photo.caption} id={photo.id}
               className="displayedPhotos"
               onClick={openPhotoDetails}/>
+              <div>{photo?.Comments?.length} <i className="far fa-comment"></i></div>
+          </figure>
         ))}
       </div>
       {showModal && (

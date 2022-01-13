@@ -7,7 +7,15 @@ export default function SplashPage() {
         <h2 className="header1">Find your inspiration.</h2>
         <h5 className="one-liner">A click is a forever thing</h5>
       </div>
-      {/* <footer className='network-links'>LinkedIn Github</footer> */}
+      <footer className='network-links'>
+        <div>Sornam Vairavan</div>
+        <a href="https://www.linkedin.com/in/sornamvairavan" target="_blank" rel="noreferrer">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+        <a href="https://github.com/sornamvairavan" target="_blank" rel="noreferrer">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+      </footer>
     </div>
   )
 }
