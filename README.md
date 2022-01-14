@@ -30,7 +30,7 @@ Splash page:
 ![Screen Shot 2022-01-13 at 3 47 58 PM](https://user-images.githubusercontent.com/80495013/149426663-3f58f798-8135-47eb-8fef-37eeadbfe32d.png)
 
 Sign up Page:
-![Screen Shot 2022-01-13 at 3 48 38 PM](https://user-images.githubusercontent.com/80495013/149426733-4b67fbf2-4b63-4bb0-bcd1-aa6e38420e5a.png)
+![Screen Shot 2022-01-13 at 10 56 27 PM](https://user-images.githubusercontent.com/80495013/149464682-b959920d-a1d7-4325-87c5-bcd3d30a9091.png)
 
 Explore tab:
 ![Screen Shot 2022-01-13 at 3 25 43 PM](https://user-images.githubusercontent.com/80495013/149425856-7aafc77c-3eb7-472a-b9b6-cdf7ec0a57f1.png)
