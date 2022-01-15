@@ -86,7 +86,7 @@ export default function likeReducer(state = {}, action) {
       allLikes[action.like.id] = action.like;
       return allLikes;
     
-    case DELETE_LIKE:
+    case REMOVE_LIKE:
       allLikes = {...state}
       delete allLikes[action.likeId]
       return allLikes;
