@@ -20,10 +20,10 @@ const add_comment = (comment) => {
   }
 }
 
-const delete_comment = (comment) => {
+const delete_comment = (commentId) => {
   return {
     type: DELETE_COMMENT,
-    comment
+    commentId
   }
 }
 
