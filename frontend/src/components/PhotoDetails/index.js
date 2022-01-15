@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { deletePhotoById, getAllPhotos } from '../../store/photo'
 import CommentsComponent from '../Comments';
+import { getAllComments } from '../../store/comment';
+import LikesComponent from '../Likes';
 
 import './PhotoDetails.css'
-import { getAllComments } from '../../store/comment';
 
 export default function PhotoDetails(photoId) {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ export default function PhotoDetails(photoId) {
               <button onClick={deletePhotoButton} 
                className="photo-delete-button">
                 Delete</button>}
+            <LikesComponent photoId={photo?.id} />
             <CommentsComponent photoId={photo?.id}/>
           </div>
         </div>

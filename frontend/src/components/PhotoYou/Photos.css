@@ -54,13 +54,16 @@ figure {
   font-weight: 500;
 }
 
-.image_comments {
+.image_comments-likes {
   position: absolute;
   align-self: flex-end;
   bottom: 30px;
   right: 30px;
 }
 
+.image_comments-likes .fa-heart {
+  margin: 0 12px 0 0;
+}
 
 .no-photos-container {
   margin: 120px;

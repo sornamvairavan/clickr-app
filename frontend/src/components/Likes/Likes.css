@@ -1,0 +1,19 @@
+.likes-container {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.likes-container span {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.fas.fa-heart.icon {
+  color: rgb(233, 50, 65);
+}
+
+.likes-icon:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
