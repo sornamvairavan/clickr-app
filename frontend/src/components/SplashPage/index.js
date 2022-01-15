@@ -10,10 +10,10 @@ export default function SplashPage() {
       <footer className='network-links'>
         <div>Sornam Vairavan</div>
         <a href="https://www.linkedin.com/in/sornamvairavan" target="_blank" rel="noreferrer">
-          <i class="fab fa-linkedin fa-lg"></i>
+          <i className="fab fa-linkedin fa-lg"></i>
         </a>
         <a href="https://github.com/sornamvairavan" target="_blank" rel="noreferrer">
-          <i class="fab fa-github fa-lg"></i>
+          <i className="fab fa-github fa-lg"></i>
         </a>
       </footer>
     </div>
