@@ -1,12 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import * as likeActions from '../../store/like';
+import './Likes.css'
 
 export default function LikesComponent(photoId) {
   const dispatch = useDispatch()
 
-  const [likeAdded, setLikeAdded] = useState('')
-  const [removeLike, setRemoveLike] = useState('')
   const [updateLikeCount, setUpdateLikeCount] = useState('')
 
   let idOfPhoto = photoId.photoId
@@ -20,9 +19,8 @@ export default function LikesComponent(photoId) {
 
   useEffect(() => {
     dispatch(likeActions.getAllLikes())
-    setRemoveLike("")
     setUpdateLikeCount('')
-  }, [dispatch, updateLikeCount, removeLike])
+  }, [dispatch, updateLikeCount])
 
   
   const payload = {
@@ -33,7 +31,6 @@ export default function LikesComponent(photoId) {
   const likePhoto = (e) => {
     return dispatch(likeActions.addLike(payload))
       .then(() => {
-        // setLikeAdded(res.like.id)
         setUpdateLikeCount("Increase count")
       })
     }
@@ -44,7 +41,6 @@ export default function LikesComponent(photoId) {
     if (likedPhoto) {
       return dispatch(likeActions.removeLikeById(likedPhoto.id))
         .then(() => {
-          setRemoveLike("Remove successful")
           setUpdateLikeCount("Decrease count")
         })
     }
@@ -54,7 +50,7 @@ export default function LikesComponent(photoId) {
 
   if (liked) {
     likeIcon = (
-      <i className="fas fa-heart" onClick={unlikePhoto}></i>
+      <i className="fas fa-heart icon" onClick={unlikePhoto}></i>
     )
   } else {
     likeIcon = (
@@ -64,7 +60,7 @@ export default function LikesComponent(photoId) {
 
   return (
     <div className="likes-container">
-      {likeIcon}
+      <div className="likes-icon">{likeIcon}</div>
         <span>
           {photoLikes.length === 0 && <div>{photoLikes.length} likes</div>}
           {photoLikes.length === 1 && <div>{photoLikes.length} like</div>}
