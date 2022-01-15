@@ -57,14 +57,14 @@ export const addLike = ({ userId, photoId }) => async(dispatch) => {
 
 export const removeLikeById = (likeId) => async(dispatch) => {
   const response = await csrfFetch(`/api/likes/${likeId}`, {
-    method: 'DELTE',
+    method: 'DELETE',
     body: JSON.stringify({
       likeId
     })
   })
 
   if (response.ok) {
-    const likeToDelete = await response.json()
+    const likeToDelete = await response.json();
     dispatch(remove_like(likeToDelete))
     return "Remove successful"
   }

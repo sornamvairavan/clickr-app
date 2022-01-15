@@ -32,11 +32,8 @@ router.post("/", asyncHandler(async (req, res) => {
 
 router.delete("/:id(\\d+)", asyncHandler(async(req, res) => {
   const likeId = req.body.likeId
-  const likeToDelete = await Like.findByPk(likeId, {
-    include: {
-      all: true
-    },
-  })
+  
+  const likeToDelete = await Like.findByPk(likeId)
 
     if(likeToDelete) {
     await likeToDelete.destroy()
