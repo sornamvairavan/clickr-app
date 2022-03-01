@@ -7,14 +7,12 @@ export default function CommentsComponent(photoId) {
   const dispatch = useDispatch()
 
   const [content, setContent] = useState('')
-  const [addCom, setAddCom] = useState('')
-  const [delCom, setDelCom] = useState('')
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     dispatch(commentActions.getAllComments())
-      setDelCom('')
-      setAddCom('')
-  }, [dispatch, addCom, delCom])
+      .then(() => setIsLoaded(true))
+  }, [dispatch, isLoaded])
 
   let idOfPhoto = photoId.photoId;
   const userId = useSelector(state => state.session.user.id);
@@ -35,7 +33,7 @@ export default function CommentsComponent(photoId) {
     let newComment = dispatch(commentActions.addComment(payload))
     if(newComment) {
       setContent('')
-      setAddCom("Added Comment")
+      setIsLoaded(!isLoaded)
     }
   }
 
@@ -43,7 +41,7 @@ export default function CommentsComponent(photoId) {
     let deletedComment = dispatch(commentActions.deleteCommmentById(e.target.id))
     
     if(deletedComment) {
-      setDelCom('Delete successful')
+      setIsLoaded(!isLoaded)
     }
   }
 

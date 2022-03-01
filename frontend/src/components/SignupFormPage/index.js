@@ -29,6 +29,7 @@ function SignupFormPage() {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
+  
   return (
     <div className='auth-form-container'>
     <form onSubmit={handleSubmit} className="auth-form">
