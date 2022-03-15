@@ -16,7 +16,10 @@ const app = express();
 app.use(morgan('dev'))
 
 app.use(cookieParser())
-app.use(express.json())
+
+// AWS update
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 if (!isProduction) {
   // enable cors only in development

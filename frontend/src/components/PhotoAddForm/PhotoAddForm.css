@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
-  width: 94%;
+  width: 100%;
   margin: 0px;
 }
 
@@ -40,8 +40,8 @@
   margin: 3px 10px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
-  height: 30px;
-  width: 100%;
+  width: 87%;
+  padding: 7px;
 }
 
 .add-input-container > label {
@@ -76,6 +76,15 @@
   background-color:rgb(77, 169, 190);
 }
 
-.photoUrl {
-  margin: 3px 10px 6px 10px;
+.edit-image {
+  width: 65%;
+  margin: 0 auto;
 }
+
+/* input[type=file]::file-selector-button:hover {
+  background-color: rgb(156, 156, 156);
+  border: 2px solid rgb(156, 156, 156);
+  color: white;
+  cursor: pointer;
+  border-radius: .2rem;
+} */

@@ -46,15 +46,20 @@ export const getAllPhotos = () => async (dispatch) => {
   }
 }
 
-export const uploadPhoto = ({ userId, photoUrl, caption, isPublic }) => async (dispatch) => {
+export const uploadPhoto = ({ userId, image, caption, isPublic }) => async (dispatch) => {
+  const formData = new FormData();
+  formData.append("userId", userId);
+  formData.append("image", image);
+  if (caption) formData.append("caption", caption);
+  formData.append("isPublic", isPublic);
+
+
   const response = await csrfFetch('/api/photos', {
     method: "POST",
-    body: JSON.stringify({
-      userId,
-      photoUrl,
-      caption,
-      isPublic
-    })
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+    body: formData
   });
 
   if (response.ok) {
