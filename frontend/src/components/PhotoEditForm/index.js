@@ -46,17 +46,18 @@ export default function PhotoEditForm() {
     }
   }
 
+  if (!sessionUser) {
+    return (
+      <Redirect to="/" />
+    )
+  }
+  
   if (+photo?.userId !== +sessionUser.id) {
     return (
       <PageNotFound />
     )
   }
 
-  if (!sessionUser) {
-    return (
-      <Redirect to="/" />
-    )
-  }
 
   return (
     <div className="add-photo-container">
