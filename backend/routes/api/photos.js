@@ -42,7 +42,7 @@ router.get("/id(\\d+)", asyncHandler(async (req, res) => {
   })
 }))
 
-router.post("/", singleMulterUpload('photo'), asyncHandler(async(req, res) => {
+router.post("/", singleMulterUpload('image'), asyncHandler(async(req, res) => {
   const {
     userId,
     caption,
@@ -50,7 +50,7 @@ router.post("/", singleMulterUpload('photo'), asyncHandler(async(req, res) => {
   } = req.body
 
   const photoUrl = await singlePublicFileUpload(req.file)
-  
+
   const newPhoto = await Photo.create({
     userId,
     photoUrl,

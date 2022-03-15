@@ -5,7 +5,7 @@ import { uploadPhoto} from '../../store/photo'
 import './PhotoAddForm.css'
 
 export default function PhotoAddForm() {
-  const [photoUrl, setPhotoUrl] = useState('')
+  const [image, setImage] = useState('')
   const [caption, setCaption] = useState('')
   const [isPublic, setIsPublic] = useState(true)
   const [errors, setErrors] = useState([])
@@ -19,7 +19,7 @@ export default function PhotoAddForm() {
 
     const payload = {
       userId: sessionUser.id,
-      photoUrl,
+      image,
       caption,
       isPublic
     }
@@ -30,6 +30,11 @@ export default function PhotoAddForm() {
         if (data.errors) setErrors(data.errors)
       }).then((res) => res && history.push('/'));
 
+  }
+
+  const addFile = (e) => {
+    const file = e.target.files[0]
+    if (file) setImage(file)
   }
 
   if (!sessionUser) {
@@ -48,13 +53,13 @@ export default function PhotoAddForm() {
             </ul>}
           <label htmlFor="photoUrl">Photo URL</label>
           <input
-            type="text"
+            type="file"
             name="photoUrl"
-            placeholder='Photo URL'
+            placeholder='Browse file...'
             autoComplete="off"
             required
-            value={photoUrl}
-            onChange={(e) => setPhotoUrl(e.target.value)}
+            value={image}
+            onChange={addFile}
           />
           <label htmlFor="caption">Caption</label>
           <input 
