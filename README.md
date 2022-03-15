@@ -55,8 +55,4 @@ Upload a photo:
 https://github.com/sornamvairavan/clickr-app/wiki
 
 ## Future features
-- Albums
-- Follows
-- Favorites
 - AWS upload
-- Google Maps
