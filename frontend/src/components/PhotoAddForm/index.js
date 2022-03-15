@@ -56,6 +56,7 @@ export default function PhotoAddForm() {
             type="file"
             name="photoUrl"
             required
+            id="choose-file"
             onChange={addFile}
           />
           <label htmlFor="caption">Caption</label>
