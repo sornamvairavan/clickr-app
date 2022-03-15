@@ -76,6 +76,11 @@
   background-color:rgb(77, 169, 190);
 }
 
-.photoUrl {
+/* .photoUrl {
   margin: 3px 10px 6px 10px;
+} */
+
+.edit-image {
+  width: 65%;
+  margin: 0 auto;
 }

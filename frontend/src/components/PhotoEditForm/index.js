@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams, Redirect } from 'react-router-dom'
 import { updatePhotoById, getAllPhotos } from '../../store/photo'
+import PageNotFound from "../PageNotFound";
 
 export default function PhotoEditForm() {
   const { photoId } = useParams();
@@ -45,6 +46,12 @@ export default function PhotoEditForm() {
     }
   }
 
+  if (+photo?.userId !== +sessionUser.id) {
+    return (
+      <PageNotFound />
+    )
+  }
+
   if (!sessionUser) {
     return (
       <Redirect to="/" />
@@ -56,7 +63,8 @@ export default function PhotoEditForm() {
       <form className='add-photo-form' onSubmit={handleSubmit}>
         <h1 className="add-form-title">Edit Photo</h1>
         <div className="add-input-container">
-          <a href={photoUrl} target="_blank" rel="noreferrer" className="photoUrl">Photo URL</a>
+          <img src={photoUrl} alt="photo" className="edit-image" />
+          {/* <a href={photoUrl} target="_blank" rel="noreferrer" className="photoUrl">Photo URL</a> */}
           <label htmlFor="caption">Caption</label>
           <input 
             type="text"
