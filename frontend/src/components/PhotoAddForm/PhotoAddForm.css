@@ -81,8 +81,10 @@
   margin: 0 auto;
 }
 
-#choose-file::file-selector-button:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+/* input[type=file]::file-selector-button:hover {
+  background-color: rgb(156, 156, 156);
+  border: 2px solid rgb(156, 156, 156);
   color: white;
   cursor: pointer;
-}
+  border-radius: .2rem;
+} */

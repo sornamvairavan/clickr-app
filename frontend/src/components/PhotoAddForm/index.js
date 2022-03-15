@@ -24,11 +24,18 @@ export default function PhotoAddForm() {
       isPublic
     }
 
-    return dispatch(uploadPhoto(payload))
-      .catch(async (res) => {
-        const data = await res.json()
-        if (data.errors) setErrors(data.errors)
-      }).then((res) => res && history.push('/'));
+    const fileType = image['type']
+    const validImageTypes = ['image/gif', 'image/jpeg', 'image/png']
+
+    if (validImageTypes.includes(fileType)) {
+      return dispatch(uploadPhoto(payload))
+        .catch(async (res) => {
+          const data = await res.json()
+          if (data.errors) setErrors(data.errors)
+        }).then((res) => res && history.push('/'));
+    } else {
+      setErrors(["Please upload a valid file type"])
+    }
 
   }
 
@@ -56,7 +63,6 @@ export default function PhotoAddForm() {
             type="file"
             name="photoUrl"
             required
-            id="choose-file"
             onChange={addFile}
           />
           <label htmlFor="caption">Caption</label>
