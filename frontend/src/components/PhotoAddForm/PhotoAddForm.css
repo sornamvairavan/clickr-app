@@ -11,7 +11,7 @@
 
 .add-photo-form {
   background-color: white;
-  margin: 100px auto;
+  margin: 85px auto;
   width: 22rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
@@ -55,11 +55,10 @@
   background-color: rgb(28, 162, 192);
   color: white;
   font-size: 0.8rem;
-  width: 40%;
   border: 1px solid rgb(28, 162, 192);
   border-radius: 0.25rem;
-  padding: 4px;
-  margin: 10px 0 10px 0;
+  padding: 4px 10px;
+  margin: 10px 5px;
   align-self: center;
   cursor: pointer;
 }
@@ -81,10 +80,25 @@
   margin: 0 auto;
 }
 
-/* input[type=file]::file-selector-button:hover {
-  background-color: rgb(156, 156, 156);
-  border: 2px solid rgb(156, 156, 156);
+.cancel-button {
+  background-color: rgb(190, 44, 44);
   color: white;
+  font-size: 0.8rem;
+  border: 1px solid  rgb(190, 44, 44);
+  border-radius: 0.25rem;
+  padding: 4px 10px;
+  margin: 10px 5px;
+  align-self: center;
   cursor: pointer;
-  border-radius: .2rem;
-} */
+  text-decoration: none;
+}
+
+.cancel-button:hover {
+  background-color: rgb(206, 49, 49);
+}
+
+.photo-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}

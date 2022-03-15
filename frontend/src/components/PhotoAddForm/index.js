@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory, Redirect } from 'react-router-dom'
+import { useHistory, Redirect, Link } from 'react-router-dom'
 import { uploadPhoto} from '../../store/photo'
 import './PhotoAddForm.css'
+
 
 export default function PhotoAddForm() {
   const [image, setImage] = useState(null)
@@ -95,7 +96,10 @@ export default function PhotoAddForm() {
               />No
               </label>
             </span>
-          <button type="submit" className="add-photo-button">Upload Photo</button>
+            <span className="photo-buttons">
+              <button type="submit" className="add-photo-button">Upload Photo</button>
+              <Link to="/" className="cancel-button">Cancel</Link>
+          </span>
         </div>
       </form>
     </div>

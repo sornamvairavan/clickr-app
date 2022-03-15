@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory, useParams, Redirect } from 'react-router-dom'
+import { useHistory, useParams, Redirect, Link } from 'react-router-dom'
 import { updatePhotoById, getAllPhotos } from '../../store/photo'
 import PageNotFound from "../PageNotFound";
 
@@ -97,7 +97,10 @@ export default function PhotoEditForm() {
               />No
               </label>
             </span>
-          <button type="submit" className="add-photo-button">Save Changes</button>
+            <span className="photo-buttons">
+              <button type="submit" className="add-photo-button">Save Changes</button>
+              <Link to="/" className="cancel-button">Cancel</Link>
+            </span>
         </div>
       </form>
     </div>
