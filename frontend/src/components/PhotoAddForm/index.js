@@ -5,7 +5,7 @@ import { uploadPhoto} from '../../store/photo'
 import './PhotoAddForm.css'
 
 export default function PhotoAddForm() {
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState(null)
   const [caption, setCaption] = useState('')
   const [isPublic, setIsPublic] = useState(true)
   const [errors, setErrors] = useState([])
@@ -51,14 +51,11 @@ export default function PhotoAddForm() {
           {errors.length > 0 && <ul className="errors">
           {errors.map((error, idx) => <li className="error" key={idx}>{error}</li>)}
             </ul>}
-          <label htmlFor="photoUrl">Photo URL</label>
+          <label htmlFor="photoUrl">Photo</label>
           <input
             type="file"
             name="photoUrl"
-            placeholder='Browse file...'
-            autoComplete="off"
             required
-            value={image}
             onChange={addFile}
           />
           <label htmlFor="caption">Caption</label>
