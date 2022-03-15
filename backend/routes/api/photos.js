@@ -3,6 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { Photo, User } = require('../../db/models');
+const {singlePublicFileUpload, singleMulterUpload} = require("../../awsS3")
 
 const router = express.Router();
 
@@ -41,14 +42,15 @@ router.get("/id(\\d+)", asyncHandler(async (req, res) => {
   })
 }))
 
-router.post("/", photoValidations, asyncHandler(async(req, res) => {
+router.post("/", singleMulterUpload('photo'), asyncHandler(async(req, res) => {
   const {
     userId,
-    photoUrl,
     caption,
     isPublic
   } = req.body
 
+  const photoUrl = await singlePublicFileUpload(req.file)
+  
   const newPhoto = await Photo.create({
     userId,
     photoUrl,
