@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
-  width: 94%;
+  width: 100%;
   margin: 0px;
 }
 
@@ -41,7 +41,7 @@
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   height: 30px;
-  width: 100%;
+  width: 90%;
 }
 
 .add-input-container > label {
@@ -75,10 +75,6 @@
 .add-photo-button:hover {
   background-color:rgb(77, 169, 190);
 }
-
-/* .photoUrl {
-  margin: 3px 10px 6px 10px;
-} */
 
 .edit-image {
   width: 65%;

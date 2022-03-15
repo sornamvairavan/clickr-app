@@ -51,7 +51,7 @@ export default function PhotoEditForm() {
       <Redirect to="/" />
     )
   }
-  
+
   if (+photo?.userId !== +sessionUser.id) {
     return (
       <PageNotFound />
@@ -65,7 +65,6 @@ export default function PhotoEditForm() {
         <h1 className="add-form-title">Edit Photo</h1>
         <div className="add-input-container">
           <img src={photoUrl} alt="photo" className="edit-image" />
-          {/* <a href={photoUrl} target="_blank" rel="noreferrer" className="photoUrl">Photo URL</a> */}
           <label htmlFor="caption">Caption</label>
           <input 
             type="text"
