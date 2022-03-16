@@ -23,7 +23,7 @@ export default function YouPage() {
 
   const closePhotoDetails = () => {
     setShowModal(false)
-    setIsLoaded(true)
+    setIsLoaded(!isLoaded)
   }
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function YouPage() {
       </div>
       {showModal && (
         <Modal onClose={closePhotoDetails}>
-          <PhotoDetails photoId={photosId} setShowModal={setShowModal}/>
+          <PhotoDetails photoId={photosId} setShowModal={setShowModal} setIsLoaded={setIsLoaded} isLoaded={isLoaded}/>
         </Modal>
       )}
     </>

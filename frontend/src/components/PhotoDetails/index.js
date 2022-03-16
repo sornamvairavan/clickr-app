@@ -15,8 +15,7 @@ export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoa
 
   useEffect(() => {
     dispatch(getSinglePhoto(+photoId))
-    // dispatch(getAllComments())
-    setIsLoaded(true)
+    setIsLoaded(!isLoaded)
   }, [dispatch, isLoaded])
 
   const deletePhotoButton = () => {
