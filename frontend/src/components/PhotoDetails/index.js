@@ -1,9 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import { deletePhotoById, getSinglePhoto } from '../../store/photo'
+import { deletePhotoById, getPublicPhotos, getSinglePhoto, getUserPhotos } from '../../store/photo'
 import CommentsComponent from '../Comments';
-import { getAllComments } from '../../store/comment';
 import LikesComponent from '../Likes';
 
 import './PhotoDetails.css'
@@ -20,6 +19,8 @@ export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoa
 
   const deletePhotoButton = () => {
     dispatch(deletePhotoById(photo.id))
+    dispatch(getUserPhotos(+userId))
+    dispatch(getPublicPhotos())
     setShowModal(false)
     setIsLoaded(!isLoaded)
   }
