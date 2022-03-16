@@ -14,8 +14,8 @@ export default function PhotoYou() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const sessionUser = useSelector(state => state.session.user);
-  const allPhotosObj = useSelector(state => state.photo.allPhotos)
-  const userPhotos = Object.values(allPhotosObj)
+  const allUserPhotosObj = useSelector(state => state.photo?.allPhotos)
+  const userPhotos = Object.values(allUserPhotosObj)
 
   let userId;
   if (sessionUser) {
@@ -33,9 +33,9 @@ export default function PhotoYou() {
   }
 
   useEffect(() => {
-    dispatch(getUserPhotos(+userId))
-    setIsLoaded(true)
-  }, [dispatch, isLoaded])
+    dispatch(getUserPhotos(1))
+    // setIsLoaded(true)
+  }, [dispatch])
 
   if (sessionUser) {
     if (userPhotos.length > 0) {

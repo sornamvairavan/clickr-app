@@ -13,9 +13,8 @@ export default function YouPage() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const sessionUser = useSelector(state => state.session.user);
-  const allPhotosObj = useSelector(state => state.photo.publicPhotos)
-
-  const publicPhotos = Object.values(allPhotosObj)
+  const allPublicPhotosObj = useSelector(state => state.photo.publicPhotos)
+  const publicPhotos = Object.values(allPublicPhotosObj)
 
   const openPhotoDetails = (e) => {
     setPhotoId(e.target.id);
@@ -29,7 +28,7 @@ export default function YouPage() {
 
   useEffect(() => {
     dispatch(getPublicPhotos())
-    setIsLoaded(false)
+    setIsLoaded(true)
   }, [dispatch, isLoaded])
 
   if (!sessionUser) {

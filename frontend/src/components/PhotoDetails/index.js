@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
-import { deletePhotoById, getAllPhotos } from '../../store/photo'
+import { deletePhotoById, getSinglePhoto } from '../../store/photo'
 import CommentsComponent from '../Comments';
 import { getAllComments } from '../../store/comment';
 import LikesComponent from '../Likes';
@@ -10,11 +10,11 @@ import './PhotoDetails.css'
 
 export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoaded }) {
   const dispatch = useDispatch();
-  const photo = useSelector(state => state.photo[photoId])
+  const photo = useSelector(state => state.photo.allPhotos[photoId])
   const userId = useSelector(state => state.session.user.id)
 
   useEffect(() => {
-    // dispatch(getAllPhotos())
+    // dispatch(getSinglePhoto(photo))
     dispatch(getAllComments())
   }, [dispatch])
 

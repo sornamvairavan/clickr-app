@@ -2,7 +2,7 @@ import { csrfFetch } from './csrf'
 
 const LOAD_USER_PHOTOS = "photos/LOAD_USER_PHOTOS";
 const LOAD_PUBLIC_PHOTOS = "photos/LOAD_PUBLIC_PHOTOS";
-const GET_PHOTO = "photos/GET_PHOTO"
+// const GET_PHOTO = "photos/GET_PHOTO"
 const ADD_PHOTO = "photos/ADD_PHOTO";
 const UPDATE_PHOTO = "photos/UPDATE_PHOTO";
 const DELETE_PHOTO = "photos/DELETE_PHOTO";
@@ -23,12 +23,12 @@ const loadPublicPhotos = (photos) => {
   }
 }
 
-const getPhotoById = (photo) => {
-  return {
-    type: GET_PHOTO,
-    photo
-  }
-}
+// const getPhotoById = (photo) => {
+//   return {
+//     type: GET_PHOTO,
+//     photo
+//   }
+// }
 
 const addPhoto = (photo) => {
   return {
@@ -72,15 +72,15 @@ export const getPublicPhotos = () => async (dispatch) => {
   }
 }
 
-export const getSinglePhoto = (photoId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/photos/${photoId}`);
+// export const getSinglePhoto = (photoId) => async (dispatch) => {
+//   const response = await csrfFetch(`/api/photos/${photoId}`);
 
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(getPhotoById(data.photoId))
-    return data.photoId;
-  }
-}
+//   if (response.ok) {
+//     const data = await response.json();
+//     dispatch(getPhotoById(data.photo))
+//     return data.photo;
+//   }
+// }
 
 
 export const uploadPhoto = ({ userId, image, caption, isPublic }) => async (dispatch) => {
@@ -148,10 +148,7 @@ export default function photoReducer(state = {}, action) {
       action.photos.forEach((photo) => {
         allPhotos[photo.id] = photo
       })
-      return {
-        ...state,
-        allPhotos
-      };
+      return {...state, allPhotos};
       
     case LOAD_PUBLIC_PHOTOS:
         action.photos.forEach((photo) => {
@@ -159,10 +156,10 @@ export default function photoReducer(state = {}, action) {
         })
         return {...state, publicPhotos};
     
-    case GET_PHOTO:
-      allPhotos = {...state}
-      allPhotos.photos[action.photo.id] = action.photo
-      return allPhotos
+    // case GET_PHOTO:
+    //   allPhotos = {...state}
+    //   allPhotos[action.photo.id] = action.photo
+    //   return allPhotos
 
     case ADD_PHOTO:
       allPhotos = {...state}
