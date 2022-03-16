@@ -11,6 +11,7 @@ export default function PhotoYou() {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false)
   const [photosId, setPhotoId] = useState('')
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const sessionUser = useSelector(state => state.session.user);
   const allPhotosObj = useSelector(state => state.photo)
@@ -29,10 +30,15 @@ export default function PhotoYou() {
     setShowModal(true)
   }
 
+  const closePhotoDetails = () => {
+    setShowModal(false)
+    setIsLoaded(true)
+  }
+
   useEffect(() => {
     dispatch(getAllPhotos())
-  }, [dispatch])
-
+    setIsLoaded(false)
+  }, [dispatch, isLoaded])
 
   if (sessionUser) {
     if (userPhotos.length > 0) {
@@ -55,7 +61,7 @@ export default function PhotoYou() {
             ))}
           </div>
           {showModal && (
-          <Modal onClose={() => setShowModal(false)}>
+          <Modal onClose={closePhotoDetails}>
             <PhotoDetails photoId={photosId}/>
           </Modal>
         )}

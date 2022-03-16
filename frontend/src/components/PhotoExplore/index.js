@@ -10,6 +10,8 @@ export default function YouPage() {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false)
   const [photosId, setPhotoId] = useState('')
+  const [isLoaded, setIsLoaded] = useState(false)
+
   const sessionUser = useSelector(state => state.session.user);
   const allPhotosObj = useSelector(state => state.photo)
 
@@ -22,9 +24,15 @@ export default function YouPage() {
     setShowModal(true)
   }
 
+  const closePhotoDetails = () => {
+    setShowModal(false)
+    setIsLoaded(true)
+  }
+
   useEffect(() => {
     dispatch(getAllPhotos())
-  }, [dispatch])
+    setIsLoaded(false)
+  }, [dispatch, isLoaded])
 
   if (!sessionUser) {
     return (
@@ -51,7 +59,7 @@ export default function YouPage() {
         ))}
       </div>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+        <Modal onClose={closePhotoDetails}>
           <PhotoDetails photoId={photosId}/>
         </Modal>
       )}
