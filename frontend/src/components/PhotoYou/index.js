@@ -37,7 +37,7 @@ export default function PhotoYou() {
 
   useEffect(() => {
     dispatch(getAllPhotos())
-    setIsLoaded(false)
+    console.log(isLoaded)
   }, [dispatch, isLoaded])
 
   if (sessionUser) {
@@ -62,7 +62,7 @@ export default function PhotoYou() {
           </div>
           {showModal && (
           <Modal onClose={closePhotoDetails}>
-            <PhotoDetails photoId={photosId}/>
+            <PhotoDetails photoId={photosId} setShowModal={setShowModal} setIsLoaded={setIsLoaded} isLoaded={setIsLoaded}/>
           </Modal>
         )}
         </>

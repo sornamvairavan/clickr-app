@@ -60,7 +60,7 @@ export default function YouPage() {
       </div>
       {showModal && (
         <Modal onClose={closePhotoDetails}>
-          <PhotoDetails photoId={photosId}/>
+          <PhotoDetails photoId={photosId} setShowModal={setShowModal}/>
         </Modal>
       )}
     </>

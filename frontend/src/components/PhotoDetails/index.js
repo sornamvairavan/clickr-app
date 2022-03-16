@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { deletePhotoById, getAllPhotos } from '../../store/photo'
 import CommentsComponent from '../Comments';
@@ -8,11 +8,10 @@ import LikesComponent from '../Likes';
 
 import './PhotoDetails.css'
 
-export default function PhotoDetails(photoId) {
+export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoaded }) {
   const dispatch = useDispatch();
-  let idOfPhoto = photoId.photoId
-  const photo = useSelector(state => state.photo[idOfPhoto])
-  const userId = useSelector(state => state.session.user.id);
+  const photo = useSelector(state => state.photo[photoId])
+  const userId = useSelector(state => state.session.user.id)
 
   useEffect(() => {
     dispatch(getAllPhotos())
@@ -20,10 +19,9 @@ export default function PhotoDetails(photoId) {
   }, [dispatch])
 
   const deletePhotoButton = () => {
-    const deletedPhoto = dispatch(deletePhotoById(photo.id))
-   if (deletedPhoto) {
-     window.location.reload()
-   }
+    dispatch(deletePhotoById(photo.id))
+    setShowModal(false)
+    // setIsLoaded(!isLoaded)
   }
 
   return (
