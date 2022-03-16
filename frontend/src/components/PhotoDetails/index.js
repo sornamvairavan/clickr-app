@@ -10,18 +10,19 @@ import './PhotoDetails.css'
 
 export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoaded }) {
   const dispatch = useDispatch();
-  const photo = useSelector(state => state.photo.allPhotos[photoId])
+  const photo = useSelector(state => state.photo?.singlePhoto)
   const userId = useSelector(state => state.session.user.id)
 
   useEffect(() => {
-    // dispatch(getSinglePhoto(photo))
-    dispatch(getAllComments())
-  }, [dispatch])
+    dispatch(getSinglePhoto(+photoId))
+    // dispatch(getAllComments())
+    setIsLoaded(true)
+  }, [dispatch, isLoaded])
 
   const deletePhotoButton = () => {
     dispatch(deletePhotoById(photo.id))
     setShowModal(false)
-    // setIsLoaded(!isLoaded)
+    setIsLoaded(!isLoaded)
   }
 
   return (

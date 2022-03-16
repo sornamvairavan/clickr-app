@@ -12,12 +12,10 @@ export default function PhotoYou() {
   const [showModal, setShowModal] = useState(false)
   const [photosId, setPhotoId] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
-  // const [userPhotos, setUserPhotos] = useState([])
 
   const sessionUser = useSelector(state => state?.session?.user);
-  const allUserPhotosObj = useSelector(state => state?.photo)
-  console.log(allUserPhotosObj)
-  let userPhotos = Object.values(allUserPhotosObj.userPhotos)
+  const allUserPhotosObj = useSelector(state => state?.photo?.userPhotos)
+  let userPhotos = Object.values(allUserPhotosObj)
 
   let userId;
   if (sessionUser) {
