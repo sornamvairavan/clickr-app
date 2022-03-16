@@ -28,7 +28,9 @@ function LoginFormPage() {
   return (
   <div className='auth-form-container'>
     <form onSubmit={handleSubmit} className="auth-form">
-      {/* <img src="../images/c.png" alt="logo" className="c-logo" /> */}
+      <div className="c-logo-container">
+        <img src="../images/c.png" alt="logo" className="c-logo" />
+      </div>
       <h1 className="form-title">Log in to Clickr</h1>
       {errors.length > 0 && <ul className="errors">
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}

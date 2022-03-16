@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal';
 import { getUserPhotos } from '../../store/photo'
 import PhotoDetails from '../PhotoDetails'
-import SplashPage from '../SplashPage';
 import './Photos.css';
 
 export default function PhotoYou() {
@@ -33,7 +32,6 @@ export default function PhotoYou() {
   }
 
   useEffect(() => {
-    console.log(isLoaded, "LOADEDD")
     dispatch(getUserPhotos(+userId))
     setIsLoaded(true)
   }, [dispatch, isLoaded])
@@ -73,11 +71,5 @@ export default function PhotoYou() {
         </div>
       )
     }
-  }
-  else {
-    return (
-      <SplashPage />
-    )
-
   }
 }

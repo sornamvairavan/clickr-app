@@ -34,6 +34,11 @@
   width: 50px;
 }
 
+.c-logo-container {
+  display: flex;
+  justify-content: center;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;

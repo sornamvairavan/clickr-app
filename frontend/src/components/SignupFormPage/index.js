@@ -33,6 +33,9 @@ function SignupFormPage() {
   return (
     <div className='auth-form-container'>
     <form onSubmit={handleSubmit} className="auth-form">
+      <div className="c-logo-container">
+        <img src="../images/c.png" alt="logo" className="c-logo" />
+      </div>
     <h1 className="form-title">Sign up for Clickr</h1>
       {errors.length > 0 && <ul className="errors">
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
