@@ -13,8 +13,10 @@ export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoa
   const userId = useSelector(state => state.session.user.id)
 
   useEffect(() => {
+    console.log("before")
     dispatch(getSinglePhoto(+photoId))
-    setIsLoaded(!isLoaded)
+    console.log("after")
+    setIsLoaded(true)
   }, [dispatch, isLoaded])
 
   const deletePhotoButton = () => {

@@ -21,9 +21,9 @@ export default function PhotoYou() {
     userId = sessionUser.id
   }
 
-  const openPhotoDetails = (e) => {
-    setPhotoId(e.target.id);
-    setShowModal(true)
+  const openPhotoDetails = (photoId) => {
+      setPhotoId(photoId);
+      setShowModal(true)
   }
 
   const closePhotoDetails = () => {
@@ -46,7 +46,7 @@ export default function PhotoYou() {
                 <img src={photo?.photoUrl} alt={photo?.caption}
                   className="displayedPhotos"
                   />
-                  <div className="image_overlay" onClick={openPhotoDetails} id={photo?.id}>
+                  <div className="image_overlay" onClick={() => openPhotoDetails(photo.id)} >
                     <div className="image_username">{photo?.User?.username}</div>
                     <div className="image_comments-likes">
                       {photo?.Likes?.length} <i className="fas fa-heart"></i>
