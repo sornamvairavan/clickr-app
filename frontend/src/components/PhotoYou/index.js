@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal';
-import { getAllPhotos } from '../../store/photo'
+import { getUserPhotos } from '../../store/photo'
 import PhotoDetails from '../PhotoDetails'
-import SplashPage from '../SplashPage';
 import './Photos.css';
 
 export default function PhotoYou() {
@@ -13,17 +12,14 @@ export default function PhotoYou() {
   const [photosId, setPhotoId] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const sessionUser = useSelector(state => state.session.user);
-  const allPhotosObj = useSelector(state => state.photo)
-
-  const allPhotosArray = Object.values(allPhotosObj)
+  const sessionUser = useSelector(state => state?.session?.user);
+  const allUserPhotosObj = useSelector(state => state?.photo?.userPhotos)
+  let userPhotos = Object.values(allUserPhotosObj)
 
   let userId;
   if (sessionUser) {
     userId = sessionUser.id
   }
-
-  const userPhotos = allPhotosArray.filter(photo => photo.userId === userId)
 
   const openPhotoDetails = (e) => {
     setPhotoId(e.target.id);
@@ -32,12 +28,12 @@ export default function PhotoYou() {
 
   const closePhotoDetails = () => {
     setShowModal(false)
-    setIsLoaded(true)
+    setIsLoaded(!isLoaded)
   }
 
   useEffect(() => {
-    dispatch(getAllPhotos())
-    console.log(isLoaded)
+    dispatch(getUserPhotos(+userId))
+    setIsLoaded(true)
   }, [dispatch, isLoaded])
 
   if (sessionUser) {
@@ -62,7 +58,7 @@ export default function PhotoYou() {
           </div>
           {showModal && (
           <Modal onClose={closePhotoDetails}>
-            <PhotoDetails photoId={photosId} setShowModal={setShowModal} setIsLoaded={setIsLoaded} isLoaded={setIsLoaded}/>
+            <PhotoDetails photoId={photosId} setShowModal={setShowModal} setIsLoaded={setIsLoaded} isLoaded={isLoaded}/>
           </Modal>
         )}
         </>
@@ -75,11 +71,5 @@ export default function PhotoYou() {
         </div>
       )
     }
-  }
-  else {
-    return (
-      <SplashPage />
-    )
-
   }
 }

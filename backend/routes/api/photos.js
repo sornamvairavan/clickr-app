@@ -19,10 +19,31 @@ photoValidations = [
   handleValidationErrors
 ]
 
-router.get("/", asyncHandler(async (req, res) => {
+// Get user's photos
+router.get("/user/:id(\\d+)", asyncHandler(async (req, res) => {
+  const userId = req.params.id;
   const photos = await Photo.findAll({
     include: {
       all: true
+    },
+    where: {
+      userId
+    }
+  });
+
+  return res.json({
+    photos
+  })
+}))
+
+// Get all public photos
+router.get("/public", asyncHandler(async (req, res) => {
+  const photos = await Photo.findAll({
+    include: {
+      all: true
+    },
+    where: {
+      isPublic: true
     }
   });
   return res.json({
@@ -30,7 +51,8 @@ router.get("/", asyncHandler(async (req, res) => {
   })
 }))
 
-router.get("/id(\\d+)", asyncHandler(async (req, res) => {
+
+router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
   const photoId = req.params.id;
   const photo = await Photo.findByPk(photoId, {
     include: {

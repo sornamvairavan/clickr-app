@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, Redirect, Link } from 'react-router-dom'
-import { uploadPhoto} from '../../store/photo'
+import { getUserPhotos, uploadPhoto} from '../../store/photo'
 import './PhotoAddForm.css'
 
 

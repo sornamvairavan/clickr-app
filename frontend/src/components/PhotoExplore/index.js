@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Modal } from '../../context/Modal';
 import PhotoDetails from '../PhotoDetails'
-import { getAllPhotos } from '../../store/photo'
+import { getPublicPhotos } from '../../store/photo'
 import '../PhotoYou/Photos.css';
 
 export default function YouPage() {
@@ -12,12 +12,9 @@ export default function YouPage() {
   const [photosId, setPhotoId] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const sessionUser = useSelector(state => state.session.user);
-  const allPhotosObj = useSelector(state => state.photo)
-
-  const allPhotosArray = Object.values(allPhotosObj)
-
-  const publicPhotos = allPhotosArray.filter(photo => photo.isPublic === true)
+  const sessionUser = useSelector(state => state?.session?.user);
+  const allPublicPhotosObj = useSelector(state => state?.photo?.publicPhotos)
+  const publicPhotos = Object.values(allPublicPhotosObj)
 
   const openPhotoDetails = (e) => {
     setPhotoId(e.target.id);
@@ -26,12 +23,12 @@ export default function YouPage() {
 
   const closePhotoDetails = () => {
     setShowModal(false)
-    setIsLoaded(true)
+    setIsLoaded(!isLoaded)
   }
 
   useEffect(() => {
-    dispatch(getAllPhotos())
-    setIsLoaded(false)
+    dispatch(getPublicPhotos())
+    setIsLoaded(true)
   }, [dispatch, isLoaded])
 
   if (!sessionUser) {
@@ -60,7 +57,7 @@ export default function YouPage() {
       </div>
       {showModal && (
         <Modal onClose={closePhotoDetails}>
-          <PhotoDetails photoId={photosId} setShowModal={setShowModal}/>
+          <PhotoDetails photoId={photosId} setShowModal={setShowModal} setIsLoaded={setIsLoaded} isLoaded={isLoaded}/>
         </Modal>
       )}
     </>
