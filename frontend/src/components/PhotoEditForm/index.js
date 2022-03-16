@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams, Redirect, Link } from 'react-router-dom'
-import { updatePhotoById, getUserPhotos } from '../../store/photo'
+import { updatePhotoById, getUserPhotos, getSinglePhoto } from '../../store/photo'
 import PageNotFound from "../PageNotFound";
 
 export default function PhotoEditForm() {
@@ -10,25 +10,22 @@ export default function PhotoEditForm() {
   const history = useHistory()
 
   const sessionUser = useSelector(state => state.session.user)
-  const photo = useSelector(state => state.photo[photoId])
+  const photo = useSelector(state => state.photo?.singlePhoto)
+
+  if (photo) {
+    localStorage.setItem('photoUrl', photo.photoUrl)
+    localStorage.setItem('caption', photo.caption || "")
+    localStorage.setItem('isPublic', photo.isPublic)
+}
+
+  const [photoUrl, setPhotoUrl] = useState(localStorage.getItem('photoUrl'))
+  const [caption, setCaption] = useState(localStorage.getItem('caption'));
+  const [isPublic, setIsPublic] = useState(localStorage.getItem('isPublic') === "true" ? true : false);
 
   useEffect(() => {
+    dispatch(getSinglePhoto(+photoId))
     dispatch(getUserPhotos(+sessionUser?.id))
-  }, [dispatch])
-
-
-  useEffect(() => {
-    if (photo && (!photoUrl && !caption)) {
-      setPhotoUrl(photo.photoUrl)
-      setCaption(photo.caption)
-      setIsPublic(photo.isPublic)
-    }
-  }, [photo])
-
-
-  const [photoUrl, setPhotoUrl] = useState("")
-  const [caption, setCaption] = useState("")
-  const [isPublic, setIsPublic] = useState("")
+  }, [dispatch, photoId, sessionUser])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,7 +61,7 @@ export default function PhotoEditForm() {
       <form className='add-photo-form' onSubmit={handleSubmit}>
         <h1 className="add-form-title">Edit Photo</h1>
         <div className="add-input-container">
-          <img src={photoUrl} alt="photo" className="edit-image" />
+          <img src={photoUrl} alt={caption} className="edit-image" />
           <label htmlFor="caption">Caption</label>
           <input 
             type="text"

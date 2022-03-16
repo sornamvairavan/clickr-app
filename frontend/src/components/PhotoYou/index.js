@@ -33,6 +33,7 @@ export default function PhotoYou() {
   }
 
   useEffect(() => {
+    console.log(isLoaded, "LOADEDD")
     dispatch(getUserPhotos(+userId))
     setIsLoaded(true)
   }, [dispatch, isLoaded])

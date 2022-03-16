@@ -39,7 +39,7 @@ function ProfileButton({ user }) {
         <NavLink className="photo-tabs" to="/" exact>You</NavLink>
         <NavLink className="photo-tabs" to="/explore">Explore</NavLink>
         <Link to="/uploadPhoto">
-          <i className="fas fa-cloud-upload-alt fa-lg" />
+          <i className="fas fa-cloud-upload-alt fa-lg" title="Upload Photo" />
         </Link>
       <span className="welcome-user">Welcome {user.fullName}!</span>
         <button onClick={openMenu} className="user-button">
