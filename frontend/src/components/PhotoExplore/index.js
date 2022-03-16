@@ -12,8 +12,8 @@ export default function YouPage() {
   const [photosId, setPhotoId] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const sessionUser = useSelector(state => state.session.user);
-  const allPublicPhotosObj = useSelector(state => state.photo.publicPhotos)
+  const sessionUser = useSelector(state => state?.session?.user);
+  const allPublicPhotosObj = useSelector(state => state?.photo?.publicPhotos)
   const publicPhotos = Object.values(allPublicPhotosObj)
 
   const openPhotoDetails = (e) => {

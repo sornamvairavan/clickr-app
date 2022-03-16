@@ -140,21 +140,32 @@ export const deletePhotoById = (photoId) => async (dispatch) => {
 
 /* ------ REDUCER ------ */
 
-export default function photoReducer(state = {}, action) {
-  let allPhotos = {};
-  let publicPhotos = {}
+
+const initialState = {
+  userPhotos: {},
+  publicPhotos: {}
+}
+
+export default function photoReducer(state = initialState, action) {
+  let newState;
   switch (action.type) {
     case LOAD_USER_PHOTOS:
+      newState = {...state}
+      const allPhotos = {}
       action.photos.forEach((photo) => {
         allPhotos[photo.id] = photo
       })
-      return {...state, allPhotos};
+      newState.userPhotos = {...allPhotos}
+      return newState
       
     case LOAD_PUBLIC_PHOTOS:
-        action.photos.forEach((photo) => {
-          publicPhotos[photo.id] = photo
-        })
-        return {...state, publicPhotos};
+      newState = {...state}
+      const allPublicPhotos = {}
+      action.photos.forEach((photo) => {
+        allPublicPhotos[photo.id] = photo
+      })
+      newState.publicPhotos = {...allPublicPhotos}
+      return newState;
     
     // case GET_PHOTO:
     //   allPhotos = {...state}
@@ -162,19 +173,19 @@ export default function photoReducer(state = {}, action) {
     //   return allPhotos
 
     case ADD_PHOTO:
-      allPhotos = {...state}
-      allPhotos[action.photo.id] = action.photo;
-      return allPhotos;
+      newState = {...state}
+      newState.userPhotos[action.photo.id] = action.photo
+      return newState;
 
     case UPDATE_PHOTO:
-      allPhotos = {...state}
-      allPhotos[action.photo.id] = action.photo;
-      return allPhotos;
+      newState = {...state}
+      newState.userPhotos[action.photo.id] = action.photo
+      return newState;
 
     case DELETE_PHOTO:
-      allPhotos = {...state}
-      delete allPhotos[action.photoId]
-      return allPhotos;
+      newState = {...state}
+      delete newState.userPhotos[action.photoId]
+      return newState;
 
     default:
       return state;
