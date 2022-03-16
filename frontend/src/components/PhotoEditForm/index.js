@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useParams, Redirect, Link } from 'react-router-dom'
-import { updatePhotoById, getAllPhotos } from '../../store/photo'
+import { updatePhotoById, getUserPhotos } from '../../store/photo'
 import PageNotFound from "../PageNotFound";
 
 export default function PhotoEditForm() {
@@ -13,7 +13,7 @@ export default function PhotoEditForm() {
   const photo = useSelector(state => state.photo[photoId])
 
   useEffect(() => {
-    dispatch(getAllPhotos())
+    dispatch(getUserPhotos(+sessionUser?.id))
   }, [dispatch])
 
 

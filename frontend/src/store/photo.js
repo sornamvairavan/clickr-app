@@ -1,16 +1,32 @@
 import { csrfFetch } from './csrf'
 
-const LOAD_PHOTOS = "photos/LOAD_PHOTOS";
+const LOAD_USER_PHOTOS = "photos/LOAD_USER_PHOTOS";
+const LOAD_PUBLIC_PHOTOS = "photos/LOAD_PUBLIC_PHOTOS";
+const GET_PHOTO = "photos/GET_PHOTO"
 const ADD_PHOTO = "photos/ADD_PHOTO";
 const UPDATE_PHOTO = "photos/UPDATE_PHOTO";
 const DELETE_PHOTO = "photos/DELETE_PHOTO";
 
 /* ----- ACTIONS ------ */
 
-const loadPhotos = (photos) => {
+const loadUserPhotos = (photos) => {
   return {
-    type: LOAD_PHOTOS,
+    type: LOAD_USER_PHOTOS,
     photos
+  }
+}
+
+const loadPublicPhotos = (photos) => {
+  return {
+    type: LOAD_PUBLIC_PHOTOS,
+    photos
+  }
+}
+
+const getPhotoById = (photo) => {
+  return {
+    type: GET_PHOTO,
+    photo
   }
 }
 
@@ -36,15 +52,36 @@ const deletePhoto = (photoId) => {
 }
   
 /* ------ THUNK ACTIONS ------ */
-export const getAllPhotos = () => async (dispatch) => {
-  const response = await csrfFetch('/api/photos');
+export const getUserPhotos = (userId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/photos/user/${userId}`);
 
   if (response.ok) {
     const data = await response.json();
-    dispatch(loadPhotos(data.photos))
+    dispatch(loadUserPhotos(data.photos))
     return data.photos;
   }
 }
+
+export const getPublicPhotos = () => async (dispatch) => {
+  const response = await csrfFetch('/api/photos/public');
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(loadPublicPhotos(data.photos))
+    return data.photos;
+  }
+}
+
+export const getSinglePhoto = (photoId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/photos/${photoId}`);
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(getPhotoById(data.photoId))
+    return data.photoId;
+  }
+}
+
 
 export const uploadPhoto = ({ userId, image, caption, isPublic }) => async (dispatch) => {
   const formData = new FormData();
@@ -105,13 +142,27 @@ export const deletePhotoById = (photoId) => async (dispatch) => {
 
 export default function photoReducer(state = {}, action) {
   let allPhotos = {};
+  let publicPhotos = {}
   switch (action.type) {
-    case LOAD_PHOTOS:
+    case LOAD_USER_PHOTOS:
       action.photos.forEach((photo) => {
         allPhotos[photo.id] = photo
       })
-      allPhotos = {...state, ...allPhotos}
-      return allPhotos;
+      return {
+        ...state,
+        allPhotos
+      };
+      
+    case LOAD_PUBLIC_PHOTOS:
+        action.photos.forEach((photo) => {
+          publicPhotos[photo.id] = photo
+        })
+        return {...state, publicPhotos};
+    
+    case GET_PHOTO:
+      allPhotos = {...state}
+      allPhotos.photos[action.photo.id] = action.photo
+      return allPhotos
 
     case ADD_PHOTO:
       allPhotos = {...state}

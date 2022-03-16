@@ -14,7 +14,7 @@ export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoa
   const userId = useSelector(state => state.session.user.id)
 
   useEffect(() => {
-    dispatch(getAllPhotos())
+    // dispatch(getAllPhotos())
     dispatch(getAllComments())
   }, [dispatch])
 

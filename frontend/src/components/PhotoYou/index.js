@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal';
-import { getAllPhotos } from '../../store/photo'
+import { getUserPhotos } from '../../store/photo'
 import PhotoDetails from '../PhotoDetails'
 import SplashPage from '../SplashPage';
 import './Photos.css';
@@ -14,16 +14,13 @@ export default function PhotoYou() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const sessionUser = useSelector(state => state.session.user);
-  const allPhotosObj = useSelector(state => state.photo)
-
-  const allPhotosArray = Object.values(allPhotosObj)
+  const allPhotosObj = useSelector(state => state.photo.allPhotos)
+  const userPhotos = Object.values(allPhotosObj)
 
   let userId;
   if (sessionUser) {
     userId = sessionUser.id
   }
-
-  const userPhotos = allPhotosArray.filter(photo => photo.userId === userId)
 
   const openPhotoDetails = (e) => {
     setPhotoId(e.target.id);
@@ -36,8 +33,8 @@ export default function PhotoYou() {
   }
 
   useEffect(() => {
-    dispatch(getAllPhotos())
-    console.log(isLoaded)
+    dispatch(getUserPhotos(+userId))
+    setIsLoaded(true)
   }, [dispatch, isLoaded])
 
   if (sessionUser) {
