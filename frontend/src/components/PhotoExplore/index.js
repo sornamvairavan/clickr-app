@@ -16,8 +16,8 @@ export default function YouPage() {
   const allPublicPhotosObj = useSelector(state => state?.photo?.publicPhotos)
   const publicPhotos = Object.values(allPublicPhotosObj)
 
-  const openPhotoDetails = (e) => {
-    setPhotoId(e.target.id);
+  const openPhotoDetails = (photoId) => {
+    setPhotoId(photoId);
     setShowModal(true)
   }
 
@@ -45,7 +45,7 @@ export default function YouPage() {
             <img src={photo.photoUrl} alt={photo.caption} 
               className="displayedPhotos"
               />
-            <div className="image_overlay" id={photo.id} onClick={openPhotoDetails}>
+            <div className="image_overlay" onClick={() => openPhotoDetails(photo.id)} >
               <div className="image_username">{photo?.User?.username}</div>
               <div className="image_comments-likes">
                 {photo?.Likes?.length} <i className="fas fa-heart"></i>

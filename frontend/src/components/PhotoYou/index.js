@@ -14,7 +14,7 @@ export default function PhotoYou() {
 
   const sessionUser = useSelector(state => state?.session?.user);
   const allUserPhotosObj = useSelector(state => state?.photo?.userPhotos)
-  let userPhotos = Object.values(allUserPhotosObj)
+  const userPhotos = Object.values(allUserPhotosObj)
 
   let userId;
   if (sessionUser) {

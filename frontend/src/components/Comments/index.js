@@ -47,27 +47,31 @@ export default function CommentsComponent(photoId) {
 
   return (
     <div className="comments-container">
-      <div className='comments-header'>Comments ({photoComments?.length})</div>
+      <div className='comments-header-list'>
+        <div className='comments-header'>
+          Comments ({photoComments?.length})
+        </div>
         <div className='comments-list'>
-          {photoComments.length > 0 && photoComments.map((comment, idx) => (
-            <div key={idx} className="comments-content">
-              <div>{comment.User.username}: </div>
-              <span>{comment.content}
-                {comment.User.id === userId && 
-                  <i className="fas fa-times" id={comment.id} onClick={deleteComment}></i>}</span>
-            </div>
-          ))}
+            {photoComments.length > 0 && photoComments.map((comment, idx) => (
+              <div key={idx} className="comments-content">
+                <div>{comment.User.username}: </div>
+                <span>{comment.content}
+                  {comment.User.id === userId && 
+                    <i className="fas fa-times" id={comment.id} onClick={deleteComment}></i>}</span>
+              </div>
+            ))}
         </div>
-        <div className="post-comment">
-          <input
-            type="text"
-            placeholder='Add a comment...'
-            autoComplete="off"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            />
-            <button disabled={!content.length} onClick={postComment} type="submit">Post</button>
-        </div>
+      </div>
+      <div className="post-comment">
+        <input
+          type="text"
+          placeholder='Add a comment...'
+          autoComplete="off"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          />
+          <button disabled={!content.length} onClick={postComment} type="submit">Post</button>
+      </div>
     </div>
   )
 }
