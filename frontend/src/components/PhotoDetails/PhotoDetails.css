@@ -7,14 +7,6 @@
   overflow: hidden;
 }
 
-/* 
-#photo-details-container {
-  width: 775px;
-  height: auto;
-  min-height: 555px;
-  display: flex;
-} */
-
 .photo-details-image {
   background-size: cover;
   background-repeat: no-repeat;
