@@ -38,11 +38,13 @@ export default function CommentsComponent(photoId) {
   }
 
   const deleteComment = (commentId) => {
-    let deletedComment = dispatch(commentActions.deleteCommmentById(commentId))
-    
-    if(deletedComment) {
-      setIsLoaded(!isLoaded)
+
+    const confirmed = window.confirm("Are you sure you want to delete this comment?")
+    if (confirmed) {
+      return dispatch(commentActions.deleteCommmentById(commentId))
+      .then(() => setIsLoaded(!isLoaded))
     }
+
   }
 
   return (
@@ -57,7 +59,7 @@ export default function CommentsComponent(photoId) {
                 <div>{comment.User.username}: </div>
                 <span>{comment.content}
                   {comment.User.id === userId && 
-                    <i className="fas fa-times" onClick={() => deleteComment(comment.id)}></i>}</span>
+                    <i className="fas fa-times" onClick={() => deleteComment(comment.id)} title="Delete comment"></i>}</span>
               </div>
             ))}
         </div>

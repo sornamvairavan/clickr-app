@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { deletePhotoById, getPublicPhotos, getSinglePhoto, getUserPhotos } from '../../store/photo'
 import CommentsComponent from '../Comments';
 import LikesComponent from '../Likes';
+import { Modal } from '../../context/Modal';
 
 import './PhotoDetails.css'
 
@@ -12,17 +13,23 @@ export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoa
   const photo = useSelector(state => state.photo?.singlePhoto)
   const userId = useSelector(state => state.session.user.id)
 
+  const [showSureModal, setShowSureModal] = useState(false)
+
   useEffect(() => {
     dispatch(getSinglePhoto(+photoId))
     setIsLoaded(true)
   }, [dispatch, isLoaded])
 
-  const deletePhotoButton = () => {
-    dispatch(deletePhotoById(photo.id))
-    dispatch(getUserPhotos(+userId))
-    dispatch(getPublicPhotos())
-    setShowModal(false)
-    setIsLoaded(!isLoaded)
+  const deletePhotoButton = (e, photoId) => {
+    e.preventDefault()
+    const confirmed = window.confirm("Are you sure you want to delete this photo?")
+    if (confirmed) {
+      return dispatch(deletePhotoById(photoId))
+        .then(() => dispatch(getUserPhotos(+userId)))
+        .then(() => dispatch(getPublicPhotos()))
+        .then(() => setShowModal(false))
+        .then(() => setIsLoaded(!isLoaded))
+    }
   }
 
   return (
@@ -35,7 +42,7 @@ export default function PhotoDetails({ photoId, setShowModal, setIsLoaded, isLoa
           <Link to={`/photos/${photo?.id}/edit`} className="photo-edit-button">
             Edit</Link>}
         {userId === photo?.userId && 
-          <button onClick={deletePhotoButton} 
+          <button onClick={(e) => deletePhotoButton(e, photo.id)} 
             className="photo-delete-button">
             Delete</button>}
         <LikesComponent photoId={photo?.id} />
