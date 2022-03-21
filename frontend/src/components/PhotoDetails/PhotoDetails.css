@@ -1,6 +1,6 @@
 #photo-details-container {
   display: flex;
-  max-width: 75vw;
+  width: 80vw;
   max-height: 80vh;
   margin: 0px;
   justify-content: center;
@@ -72,4 +72,14 @@
 
 .photo-delete-button:hover, .photo-edit-button:hover {
   opacity: 80%;
+}
+
+@media screen and (min-width: 800px) {
+  .photo-details-image {
+    max-width: 65%;
+  }
+
+  .comments-list {
+    height: 140px
+  }
 }
