@@ -24,22 +24,23 @@ To run this App locally:
   - Sequelize
   - PostgreSQL
   - Heroku
+  - AWS S3
 
 ## Screenshots
 Splash page:
 ![Screen Shot 2022-01-13 at 3 47 58 PM](https://user-images.githubusercontent.com/80495013/149426663-3f58f798-8135-47eb-8fef-37eeadbfe32d.png)
 
 Sign up Page:
-![Screen Shot 2022-01-13 at 10 56 27 PM](https://user-images.githubusercontent.com/80495013/149464682-b959920d-a1d7-4325-87c5-bcd3d30a9091.png)
+<img width="1440" alt="Screen Shot 2022-03-25 at 3 00 41 PM" src="https://user-images.githubusercontent.com/80495013/160208959-6422de61-54a9-41b0-a549-e7a273a1e084.png">
 
 Explore tab:
 ![Screen Shot 2022-01-15 at 2 08 02 PM](https://user-images.githubusercontent.com/80495013/149639333-acc86cc0-03f2-4890-94e2-8256732c3a33.png)
 
 Image Details:
-![Screen Shot 2022-01-15 at 2 12 06 PM](https://user-images.githubusercontent.com/80495013/149639311-0d589be2-cf2e-4d3f-a97a-105515aa89b6.png)
+<img width="1440" alt="Screen Shot 2022-03-25 at 3 00 25 PM" src="https://user-images.githubusercontent.com/80495013/160209219-cb97028c-1b88-4667-847c-ecdda7727596.png">
 
 Upload a photo:
-![Screen Shot 2022-01-13 at 3 47 01 PM](https://user-images.githubusercontent.com/80495013/149426573-dde49165-ff6b-43c2-b61c-5578448ccddc.png)
+<img width="1440" alt="Screen Shot 2022-03-25 at 2 59 34 PM" src="https://user-images.githubusercontent.com/80495013/160209157-1d7dbeec-dfcc-41bb-a804-6b338ee96cb6.png">
 
 ## Features
 - Users can sign up, log in and log out.
@@ -50,9 +51,7 @@ Upload a photo:
 - Clickr members can post and delete their own comments on any public photo.
 - Clickr members can view comments on all public photos.
 - Clickr members can like and unlike public photos.
+- AWS is used for all storage of user uploaded files.
 
 ## Link to Wiki docs
 https://github.com/sornamvairavan/clickr-app/wiki
-
-## Future features
-- AWS upload
