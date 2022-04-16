@@ -90,7 +90,6 @@ export const uploadPhoto = ({ userId, image, caption, isPublic }) => async (disp
   if (caption) formData.append("caption", caption);
   formData.append("isPublic", isPublic);
 
-
   const response = await csrfFetch('/api/photos', {
     method: "POST",
     headers: {
